@@ -1,0 +1,23 @@
+tests package
+=============
+
+Submodules
+----------
+
+tests.test_basics module
+------------------------
+
+.. automodule:: tests.test_app
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+
+Module contents
+---------------
+
+.. automodule:: tests
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="0" name="pytest" skips="0" tests="12" time="5.903"><testcase classname="tests.test_app.FirstTest" file="tests/test_app.py" line="82" name="test_app_exists" time="0.23480439186096191"></testcase><testcase classname="tests.test_app.FirstTest" file="tests/test_app.py" line="85" name="test_app_is_testing" time="0.1678304672241211"></testcase><testcase classname="tests.test_app.First_ClientTest" file="tests/test_app.py" line="90" name="test_a" time="0.16405630111694336"></testcase><testcase classname="tests.test_app.First_dbTest" file="tests/test_app.py" line="95" name="test_a" time="0.178725004196167"></testcase><testcase classname="tests.test_app.UserModelTestCase" file="tests/test_app.py" line="104" name="test_no_password_getter" time="0.25687313079833984"></testcase><testcase classname="tests.test_app.UserModelTestCase" file="tests/test_app.py" line="114" name="test_password_salts_are_random" time="0.318997859954834"></testcase><testcase classname="tests.test_app.UserModelTestCase" file="tests/test_app.py" line="100" name="test_password_setter" time="0.237227201461792"></testcase><testcase classname="tests.test_app.UserModelTestCase" file="tests/test_app.py" line="109" name="test_password_verification" time="0.3550705909729004"></testcase><testcase classname="tests.test_app.UserLoginLogouTestCase" file="tests/test_app.py" line="123" name="test_login" time="0.33829474449157715"><system-out>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+    &lt;title&gt; TESTING Logging Server Status Page &lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Start old icon 
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;link rel=&quot;icon&quot;          href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+--&gt;
+
+&lt;!-- Start new icon --&gt; 
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;57x57&quot;          href=&quot;/static/favicon/apple-icon-57x57.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;60x60&quot;          href=&quot;/static/favicon/apple-icon-60x60.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;72x72&quot;          href=&quot;/static/favicon/apple-icon-72x72.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;76x76&quot;          href=&quot;/static/favicon/apple-icon-76x76.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;114x114&quot;        href=&quot;/static/favicon/apple-icon-114x114.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;120x120&quot;        href=&quot;/static/favicon/apple-icon-120x120.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;144x144&quot;        href=&quot;/static/favicon/apple-icon-144x144.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;152x152&quot;        href=&quot;/static/favicon/apple-icon-152x152.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;180x180&quot;        href=&quot;/static/favicon/apple-icon-180x180.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;192x192&quot;        href=&quot;/static/favicon/android-icon-192x192.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;32x32&quot;          href=&quot;/static/favicon/favicon-32x32.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;96x96&quot;          href=&quot;/static/favicon/favicon-96x96.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;16x16&quot;          href=&quot;/static/favicon/favicon-16x16.png&quot;&gt;
+&lt;link rel=&quot;manifest&quot;                                lref=&quot;/manifest.json&quot;&gt;
+&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ffffff&quot;&gt;
+&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;/ms-icon-144x144.png&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;
+&lt;!-- Fin new icon --&gt; 
+
+
+
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/logging_server.css&quot;&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    
+&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;&lt;a class=&quot;navbar-brand&quot; href=&quot;/index&quot;&gt;
+                      TESTING Logging Server Status Page
+                   &lt;/a&gt;
+                &lt;/li&gt;
+                
+                     &lt;li&gt;&lt;a href=&quot;/login&quot;&gt;Log In&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+    
+&lt;table&gt;
+     &lt;tr&gt;&lt;td&gt;
+       &lt;form action=&quot;/&quot; method=&quot;post&quot;  accept-charset=&quot;ISO-8859-1&quot;&gt;
+           &lt;select name=&quot;SYSTEM_ID&quot; title=&quot;Define SYSTEM_ID&quot;&gt;
+                
+                   &lt;option   selected            value=&quot;None&quot;&gt;
+                    None 
+                   &lt;/option&gt;
+               
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SYSTEM_ID&quot; title=&quot;Define SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected      value=&quot;None&quot;&gt;
+                  None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SUB_SYSTEM_ID&quot; title=&quot;DEFINE SUB_SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected  value=&quot;None&quot;&gt;
+                   None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_1&quot; title=&quot;DEFINE USER_SPEC_1&quot;&gt;
+              
+                 &lt;option       selected       value=&quot;None&quot;&gt;None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_2&quot; title=&quot;DEFINE USER_SPEC_2&quot; &gt;
+              
+                 &lt;option           selected    value=&quot;None&quot;&gt;
+                      None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;PRODUKT_ID&quot; title=&quot;DEFINE PRODUKT_ID&quot;&gt;
+              
+                 &lt;option          selected    value=&quot;None&quot;&gt;
+                   None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;tr&gt;&lt;td&gt;
+           &lt;input name=&quot;pattern&quot; size=&quot;12&quot; value=&quot;&quot; title=&quot;define a pattern to search for&quot;&gt;
+           &lt;input name=&quot;starting_at&quot; size=&quot;20&quot; value=&quot;2018-01-18 21:46:31.832319&quot; title=&quot;adapt the starting time range for the request&quot; &gt;
+           &lt;select name=&quot;notify_level&quot; title=&quot;define the log level upon which records will be displayed&quot;&gt;
+                   
+                      
+                       &lt;option          value=&quot;00&quot;&gt;ALL   (&gt;00)&lt;/option&gt;
+                       &lt;option          value=&quot;10&quot;&gt;DEBUG (&gt;10)&lt;/option&gt;
+                       &lt;option          value=&quot;20&quot;&gt;INFO  (&gt;20)&lt;/option&gt;
+                       &lt;option selected value=&quot;30&quot;&gt;ERROR (&gt;30)&lt;/option&gt;
+                      
+      
+                 &lt;/select&gt;
+          &lt;input name=&quot;max_rows&quot; size=&quot;6&quot; value=&quot;1000&quot; title=&quot;define the maximum number of log records to retrieve&quot;&gt; 
+          Currently 0
+          &lt;select name=&quot;old_row_first&quot; title=&quot;define the order, how log-records are displayed&quot;&gt;
+                      
+                       &lt;option          value=&quot;1&quot;&gt;Oldest log record First&lt;/option&gt;
+                       &lt;option selected value=&quot;0&quot;&gt;Newest Log Record First&lt;/option&gt;
+                      
+          &lt;/select&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;submit&quot;   style=&quot; background-color: #FFFFC0; border: 3pt ridge lightgrey&quot;&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;/form&gt;
+    &lt;/table&gt;
+     &lt;table class=&quot;htable&quot;&gt;
+      &lt;tr class=&quot;heading&quot;&gt;&lt;th&gt;Date&lt;/th&gt;
+                          &lt;th&gt;Level&lt;/th&gt;
+                          &lt;th&gt;System&lt;/th&gt;
+                          &lt;th&gt;App&lt;/th&gt;
+                          &lt;th&gt;Module&lt;/th&gt;
+                          &lt;th&gt;Message&lt;/th&gt;
+                          &lt;th&gt;Exception&lt;/th&gt;
+                          &lt;th&gt;Stack info&lt;/th&gt;
+      &lt;/tr&gt;
+
+      
+    &lt;/table&gt;
+
+
+
+    
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+    &lt;title&gt; TESTING Logging Server Status Page &lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Start old icon 
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;link rel=&quot;icon&quot;          href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+--&gt;
+
+&lt;!-- Start new icon --&gt; 
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;57x57&quot;          href=&quot;/static/favicon/apple-icon-57x57.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;60x60&quot;          href=&quot;/static/favicon/apple-icon-60x60.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;72x72&quot;          href=&quot;/static/favicon/apple-icon-72x72.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;76x76&quot;          href=&quot;/static/favicon/apple-icon-76x76.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;114x114&quot;        href=&quot;/static/favicon/apple-icon-114x114.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;120x120&quot;        href=&quot;/static/favicon/apple-icon-120x120.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;144x144&quot;        href=&quot;/static/favicon/apple-icon-144x144.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;152x152&quot;        href=&quot;/static/favicon/apple-icon-152x152.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;180x180&quot;        href=&quot;/static/favicon/apple-icon-180x180.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;192x192&quot;        href=&quot;/static/favicon/android-icon-192x192.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;32x32&quot;          href=&quot;/static/favicon/favicon-32x32.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;96x96&quot;          href=&quot;/static/favicon/favicon-96x96.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;16x16&quot;          href=&quot;/static/favicon/favicon-16x16.png&quot;&gt;
+&lt;link rel=&quot;manifest&quot;                                lref=&quot;/manifest.json&quot;&gt;
+&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ffffff&quot;&gt;
+&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;/ms-icon-144x144.png&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;
+&lt;!-- Fin new icon --&gt; 
+
+
+
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/logging_server.css&quot;&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    
+&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;&lt;a class=&quot;navbar-brand&quot; href=&quot;/index&quot;&gt;
+                      TESTING Logging Server Status Page
+                   &lt;/a&gt;
+                &lt;/li&gt;
+                
+                     &lt;li&gt;&lt;a href=&quot;/logout&quot;&gt;       Log Out&lt;/a&gt;&lt;/li&gt;
+                     &lt;li&gt;&lt;a href=&quot;/reset_database&quot;&gt;clean &gt; 30 days&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+    
+&lt;table&gt;
+     &lt;tr&gt;&lt;td&gt;
+       &lt;form action=&quot;/&quot; method=&quot;post&quot;  accept-charset=&quot;ISO-8859-1&quot;&gt;
+           &lt;select name=&quot;SYSTEM_ID&quot; title=&quot;Define SYSTEM_ID&quot;&gt;
+                
+                   &lt;option   selected            value=&quot;None&quot;&gt;
+                    None 
+                   &lt;/option&gt;
+               
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SYSTEM_ID&quot; title=&quot;Define SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected      value=&quot;None&quot;&gt;
+                  None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SUB_SYSTEM_ID&quot; title=&quot;DEFINE SUB_SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected  value=&quot;None&quot;&gt;
+                   None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_1&quot; title=&quot;DEFINE USER_SPEC_1&quot;&gt;
+              
+                 &lt;option       selected       value=&quot;None&quot;&gt;None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_2&quot; title=&quot;DEFINE USER_SPEC_2&quot; &gt;
+              
+                 &lt;option           selected    value=&quot;None&quot;&gt;
+                      None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;PRODUKT_ID&quot; title=&quot;DEFINE PRODUKT_ID&quot;&gt;
+              
+                 &lt;option          selected    value=&quot;None&quot;&gt;
+                   None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;tr&gt;&lt;td&gt;
+           &lt;input name=&quot;pattern&quot; size=&quot;12&quot; value=&quot;&quot; title=&quot;define a pattern to search for&quot;&gt;
+           &lt;input name=&quot;starting_at&quot; size=&quot;20&quot; value=&quot;2018-01-18 21:46:31.832319&quot; title=&quot;adapt the starting time range for the request&quot; &gt;
+           &lt;select name=&quot;notify_level&quot; title=&quot;define the log level upon which records will be displayed&quot;&gt;
+                   
+                      
+                       &lt;option          value=&quot;00&quot;&gt;ALL   (&gt;00)&lt;/option&gt;
+                       &lt;option          value=&quot;10&quot;&gt;DEBUG (&gt;10)&lt;/option&gt;
+                       &lt;option          value=&quot;20&quot;&gt;INFO  (&gt;20)&lt;/option&gt;
+                       &lt;option selected value=&quot;30&quot;&gt;ERROR (&gt;30)&lt;/option&gt;
+                      
+      
+                 &lt;/select&gt;
+          &lt;input name=&quot;max_rows&quot; size=&quot;6&quot; value=&quot;1000&quot; title=&quot;define the maximum number of log records to retrieve&quot;&gt; 
+          Currently 0
+          &lt;select name=&quot;old_row_first&quot; title=&quot;define the order, how log-records are displayed&quot;&gt;
+                      
+                       &lt;option          value=&quot;1&quot;&gt;Oldest log record First&lt;/option&gt;
+                       &lt;option selected value=&quot;0&quot;&gt;Newest Log Record First&lt;/option&gt;
+                      
+          &lt;/select&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;submit&quot;   style=&quot; background-color: #FFFFC0; border: 3pt ridge lightgrey&quot;&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;/form&gt;
+    &lt;/table&gt;
+     &lt;table class=&quot;htable&quot;&gt;
+      &lt;tr class=&quot;heading&quot;&gt;&lt;th&gt;Date&lt;/th&gt;
+                          &lt;th&gt;Level&lt;/th&gt;
+                          &lt;th&gt;System&lt;/th&gt;
+                          &lt;th&gt;App&lt;/th&gt;
+                          &lt;th&gt;Module&lt;/th&gt;
+                          &lt;th&gt;Message&lt;/th&gt;
+                          &lt;th&gt;Exception&lt;/th&gt;
+                          &lt;th&gt;Stack info&lt;/th&gt;
+      &lt;/tr&gt;
+
+      
+    &lt;/table&gt;
+
+
+
+    
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</system-out></testcase><testcase classname="tests.test_app.UserLoginLogouTestCase" file="tests/test_app.py" line="127" name="test_logout" time="0.42076754570007324"><system-out>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+    &lt;title&gt; TESTING Logging Server Status Page &lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Start old icon 
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;link rel=&quot;icon&quot;          href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+--&gt;
+
+&lt;!-- Start new icon --&gt; 
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;57x57&quot;          href=&quot;/static/favicon/apple-icon-57x57.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;60x60&quot;          href=&quot;/static/favicon/apple-icon-60x60.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;72x72&quot;          href=&quot;/static/favicon/apple-icon-72x72.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;76x76&quot;          href=&quot;/static/favicon/apple-icon-76x76.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;114x114&quot;        href=&quot;/static/favicon/apple-icon-114x114.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;120x120&quot;        href=&quot;/static/favicon/apple-icon-120x120.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;144x144&quot;        href=&quot;/static/favicon/apple-icon-144x144.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;152x152&quot;        href=&quot;/static/favicon/apple-icon-152x152.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;180x180&quot;        href=&quot;/static/favicon/apple-icon-180x180.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;192x192&quot;        href=&quot;/static/favicon/android-icon-192x192.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;32x32&quot;          href=&quot;/static/favicon/favicon-32x32.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;96x96&quot;          href=&quot;/static/favicon/favicon-96x96.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;16x16&quot;          href=&quot;/static/favicon/favicon-16x16.png&quot;&gt;
+&lt;link rel=&quot;manifest&quot;                                lref=&quot;/manifest.json&quot;&gt;
+&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ffffff&quot;&gt;
+&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;/ms-icon-144x144.png&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;
+&lt;!-- Fin new icon --&gt; 
+
+
+
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/logging_server.css&quot;&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    
+&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;&lt;a class=&quot;navbar-brand&quot; href=&quot;/index&quot;&gt;
+                      TESTING Logging Server Status Page
+                   &lt;/a&gt;
+                &lt;/li&gt;
+                
+                     &lt;li&gt;&lt;a href=&quot;/login&quot;&gt;Log In&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+    
+&lt;table&gt;
+     &lt;tr&gt;&lt;td&gt;
+       &lt;form action=&quot;/&quot; method=&quot;post&quot;  accept-charset=&quot;ISO-8859-1&quot;&gt;
+           &lt;select name=&quot;SYSTEM_ID&quot; title=&quot;Define SYSTEM_ID&quot;&gt;
+                
+                   &lt;option   selected            value=&quot;None&quot;&gt;
+                    None 
+                   &lt;/option&gt;
+               
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SYSTEM_ID&quot; title=&quot;Define SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected      value=&quot;None&quot;&gt;
+                  None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SUB_SYSTEM_ID&quot; title=&quot;DEFINE SUB_SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected  value=&quot;None&quot;&gt;
+                   None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_1&quot; title=&quot;DEFINE USER_SPEC_1&quot;&gt;
+              
+                 &lt;option       selected       value=&quot;None&quot;&gt;None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_2&quot; title=&quot;DEFINE USER_SPEC_2&quot; &gt;
+              
+                 &lt;option           selected    value=&quot;None&quot;&gt;
+                      None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;PRODUKT_ID&quot; title=&quot;DEFINE PRODUKT_ID&quot;&gt;
+              
+                 &lt;option          selected    value=&quot;None&quot;&gt;
+                   None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;tr&gt;&lt;td&gt;
+           &lt;input name=&quot;pattern&quot; size=&quot;12&quot; value=&quot;&quot; title=&quot;define a pattern to search for&quot;&gt;
+           &lt;input name=&quot;starting_at&quot; size=&quot;20&quot; value=&quot;2018-01-18 21:46:32.172926&quot; title=&quot;adapt the starting time range for the request&quot; &gt;
+           &lt;select name=&quot;notify_level&quot; title=&quot;define the log level upon which records will be displayed&quot;&gt;
+                   
+                      
+                       &lt;option          value=&quot;00&quot;&gt;ALL   (&gt;00)&lt;/option&gt;
+                       &lt;option          value=&quot;10&quot;&gt;DEBUG (&gt;10)&lt;/option&gt;
+                       &lt;option          value=&quot;20&quot;&gt;INFO  (&gt;20)&lt;/option&gt;
+                       &lt;option selected value=&quot;30&quot;&gt;ERROR (&gt;30)&lt;/option&gt;
+                      
+      
+                 &lt;/select&gt;
+          &lt;input name=&quot;max_rows&quot; size=&quot;6&quot; value=&quot;1000&quot; title=&quot;define the maximum number of log records to retrieve&quot;&gt; 
+          Currently 0
+          &lt;select name=&quot;old_row_first&quot; title=&quot;define the order, how log-records are displayed&quot;&gt;
+                      
+                       &lt;option          value=&quot;1&quot;&gt;Oldest log record First&lt;/option&gt;
+                       &lt;option selected value=&quot;0&quot;&gt;Newest Log Record First&lt;/option&gt;
+                      
+          &lt;/select&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;submit&quot;   style=&quot; background-color: #FFFFC0; border: 3pt ridge lightgrey&quot;&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;/form&gt;
+    &lt;/table&gt;
+     &lt;table class=&quot;htable&quot;&gt;
+      &lt;tr class=&quot;heading&quot;&gt;&lt;th&gt;Date&lt;/th&gt;
+                          &lt;th&gt;Level&lt;/th&gt;
+                          &lt;th&gt;System&lt;/th&gt;
+                          &lt;th&gt;App&lt;/th&gt;
+                          &lt;th&gt;Module&lt;/th&gt;
+                          &lt;th&gt;Message&lt;/th&gt;
+                          &lt;th&gt;Exception&lt;/th&gt;
+                          &lt;th&gt;Stack info&lt;/th&gt;
+      &lt;/tr&gt;
+
+      
+    &lt;/table&gt;
+
+
+
+    
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+    &lt;title&gt; TESTING Logging Server Status Page &lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Start old icon 
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;link rel=&quot;icon&quot;          href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+--&gt;
+
+&lt;!-- Start new icon --&gt; 
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;57x57&quot;          href=&quot;/static/favicon/apple-icon-57x57.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;60x60&quot;          href=&quot;/static/favicon/apple-icon-60x60.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;72x72&quot;          href=&quot;/static/favicon/apple-icon-72x72.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;76x76&quot;          href=&quot;/static/favicon/apple-icon-76x76.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;114x114&quot;        href=&quot;/static/favicon/apple-icon-114x114.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;120x120&quot;        href=&quot;/static/favicon/apple-icon-120x120.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;144x144&quot;        href=&quot;/static/favicon/apple-icon-144x144.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;152x152&quot;        href=&quot;/static/favicon/apple-icon-152x152.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;180x180&quot;        href=&quot;/static/favicon/apple-icon-180x180.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;192x192&quot;        href=&quot;/static/favicon/android-icon-192x192.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;32x32&quot;          href=&quot;/static/favicon/favicon-32x32.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;96x96&quot;          href=&quot;/static/favicon/favicon-96x96.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;16x16&quot;          href=&quot;/static/favicon/favicon-16x16.png&quot;&gt;
+&lt;link rel=&quot;manifest&quot;                                lref=&quot;/manifest.json&quot;&gt;
+&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ffffff&quot;&gt;
+&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;/ms-icon-144x144.png&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;
+&lt;!-- Fin new icon --&gt; 
+
+
+
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/logging_server.css&quot;&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    
+&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;&lt;a class=&quot;navbar-brand&quot; href=&quot;/index&quot;&gt;
+                      TESTING Logging Server Status Page
+                   &lt;/a&gt;
+                &lt;/li&gt;
+                
+                     &lt;li&gt;&lt;a href=&quot;/logout&quot;&gt;       Log Out&lt;/a&gt;&lt;/li&gt;
+                     &lt;li&gt;&lt;a href=&quot;/reset_database&quot;&gt;clean &gt; 30 days&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+    
+&lt;table&gt;
+     &lt;tr&gt;&lt;td&gt;
+       &lt;form action=&quot;/&quot; method=&quot;post&quot;  accept-charset=&quot;ISO-8859-1&quot;&gt;
+           &lt;select name=&quot;SYSTEM_ID&quot; title=&quot;Define SYSTEM_ID&quot;&gt;
+                
+                   &lt;option   selected            value=&quot;None&quot;&gt;
+                    None 
+                   &lt;/option&gt;
+               
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SYSTEM_ID&quot; title=&quot;Define SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected      value=&quot;None&quot;&gt;
+                  None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SUB_SYSTEM_ID&quot; title=&quot;DEFINE SUB_SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected  value=&quot;None&quot;&gt;
+                   None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_1&quot; title=&quot;DEFINE USER_SPEC_1&quot;&gt;
+              
+                 &lt;option       selected       value=&quot;None&quot;&gt;None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_2&quot; title=&quot;DEFINE USER_SPEC_2&quot; &gt;
+              
+                 &lt;option           selected    value=&quot;None&quot;&gt;
+                      None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;PRODUKT_ID&quot; title=&quot;DEFINE PRODUKT_ID&quot;&gt;
+              
+                 &lt;option          selected    value=&quot;None&quot;&gt;
+                   None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;tr&gt;&lt;td&gt;
+           &lt;input name=&quot;pattern&quot; size=&quot;12&quot; value=&quot;&quot; title=&quot;define a pattern to search for&quot;&gt;
+           &lt;input name=&quot;starting_at&quot; size=&quot;20&quot; value=&quot;2018-01-18 21:46:32.172926&quot; title=&quot;adapt the starting time range for the request&quot; &gt;
+           &lt;select name=&quot;notify_level&quot; title=&quot;define the log level upon which records will be displayed&quot;&gt;
+                   
+                      
+                       &lt;option          value=&quot;00&quot;&gt;ALL   (&gt;00)&lt;/option&gt;
+                       &lt;option          value=&quot;10&quot;&gt;DEBUG (&gt;10)&lt;/option&gt;
+                       &lt;option          value=&quot;20&quot;&gt;INFO  (&gt;20)&lt;/option&gt;
+                       &lt;option selected value=&quot;30&quot;&gt;ERROR (&gt;30)&lt;/option&gt;
+                      
+      
+                 &lt;/select&gt;
+          &lt;input name=&quot;max_rows&quot; size=&quot;6&quot; value=&quot;1000&quot; title=&quot;define the maximum number of log records to retrieve&quot;&gt; 
+          Currently 0
+          &lt;select name=&quot;old_row_first&quot; title=&quot;define the order, how log-records are displayed&quot;&gt;
+                      
+                       &lt;option          value=&quot;1&quot;&gt;Oldest log record First&lt;/option&gt;
+                       &lt;option selected value=&quot;0&quot;&gt;Newest Log Record First&lt;/option&gt;
+                      
+          &lt;/select&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;submit&quot;   style=&quot; background-color: #FFFFC0; border: 3pt ridge lightgrey&quot;&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;/form&gt;
+    &lt;/table&gt;
+     &lt;table class=&quot;htable&quot;&gt;
+      &lt;tr class=&quot;heading&quot;&gt;&lt;th&gt;Date&lt;/th&gt;
+                          &lt;th&gt;Level&lt;/th&gt;
+                          &lt;th&gt;System&lt;/th&gt;
+                          &lt;th&gt;App&lt;/th&gt;
+                          &lt;th&gt;Module&lt;/th&gt;
+                          &lt;th&gt;Message&lt;/th&gt;
+                          &lt;th&gt;Exception&lt;/th&gt;
+                          &lt;th&gt;Stack info&lt;/th&gt;
+      &lt;/tr&gt;
+
+      
+    &lt;/table&gt;
+
+
+
+    
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</system-out></testcase><testcase classname="tests.test_app.UICheck" file="tests/test_app.py" line="135" name="test_grep" time="0.3119964599609375"><system-out>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+    &lt;title&gt; TESTING Logging Server Status Page &lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Start old icon 
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;link rel=&quot;icon&quot;          href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+--&gt;
+
+&lt;!-- Start new icon --&gt; 
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;57x57&quot;          href=&quot;/static/favicon/apple-icon-57x57.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;60x60&quot;          href=&quot;/static/favicon/apple-icon-60x60.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;72x72&quot;          href=&quot;/static/favicon/apple-icon-72x72.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;76x76&quot;          href=&quot;/static/favicon/apple-icon-76x76.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;114x114&quot;        href=&quot;/static/favicon/apple-icon-114x114.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;120x120&quot;        href=&quot;/static/favicon/apple-icon-120x120.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;144x144&quot;        href=&quot;/static/favicon/apple-icon-144x144.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;152x152&quot;        href=&quot;/static/favicon/apple-icon-152x152.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;180x180&quot;        href=&quot;/static/favicon/apple-icon-180x180.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;192x192&quot;        href=&quot;/static/favicon/android-icon-192x192.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;32x32&quot;          href=&quot;/static/favicon/favicon-32x32.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;96x96&quot;          href=&quot;/static/favicon/favicon-96x96.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;16x16&quot;          href=&quot;/static/favicon/favicon-16x16.png&quot;&gt;
+&lt;link rel=&quot;manifest&quot;                                lref=&quot;/manifest.json&quot;&gt;
+&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ffffff&quot;&gt;
+&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;/ms-icon-144x144.png&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;
+&lt;!-- Fin new icon --&gt; 
+
+
+
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/logging_server.css&quot;&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    
+&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;&lt;a class=&quot;navbar-brand&quot; href=&quot;/index&quot;&gt;
+                      TESTING Logging Server Status Page
+                   &lt;/a&gt;
+                &lt;/li&gt;
+                
+                     &lt;li&gt;&lt;a href=&quot;/login&quot;&gt;Log In&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+    
+&lt;table&gt;
+     &lt;tr&gt;&lt;td&gt;
+       &lt;form action=&quot;/&quot; method=&quot;post&quot;  accept-charset=&quot;ISO-8859-1&quot;&gt;
+           &lt;select name=&quot;SYSTEM_ID&quot; title=&quot;Define SYSTEM_ID&quot;&gt;
+                
+                   &lt;option   selected            value=&quot;None&quot;&gt;
+                    None 
+                   &lt;/option&gt;
+               
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SYSTEM_ID&quot; title=&quot;Define SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected      value=&quot;None&quot;&gt;
+                  None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SUB_SYSTEM_ID&quot; title=&quot;DEFINE SUB_SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected  value=&quot;None&quot;&gt;
+                   None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_1&quot; title=&quot;DEFINE USER_SPEC_1&quot;&gt;
+              
+                 &lt;option       selected       value=&quot;None&quot;&gt;None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_2&quot; title=&quot;DEFINE USER_SPEC_2&quot; &gt;
+              
+                 &lt;option           selected    value=&quot;None&quot;&gt;
+                      None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;PRODUKT_ID&quot; title=&quot;DEFINE PRODUKT_ID&quot;&gt;
+              
+                 &lt;option          selected    value=&quot;None&quot;&gt;
+                   None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;tr&gt;&lt;td&gt;
+           &lt;input name=&quot;pattern&quot; size=&quot;12&quot; value=&quot;&quot; title=&quot;define a pattern to search for&quot;&gt;
+           &lt;input name=&quot;starting_at&quot; size=&quot;20&quot; value=&quot;2018-01-18 21:46:32.600640&quot; title=&quot;adapt the starting time range for the request&quot; &gt;
+           &lt;select name=&quot;notify_level&quot; title=&quot;define the log level upon which records will be displayed&quot;&gt;
+                   
+                      
+                       &lt;option          value=&quot;00&quot;&gt;ALL   (&gt;00)&lt;/option&gt;
+                       &lt;option          value=&quot;10&quot;&gt;DEBUG (&gt;10)&lt;/option&gt;
+                       &lt;option          value=&quot;20&quot;&gt;INFO  (&gt;20)&lt;/option&gt;
+                       &lt;option selected value=&quot;30&quot;&gt;ERROR (&gt;30)&lt;/option&gt;
+                      
+      
+                 &lt;/select&gt;
+          &lt;input name=&quot;max_rows&quot; size=&quot;6&quot; value=&quot;1000&quot; title=&quot;define the maximum number of log records to retrieve&quot;&gt; 
+          Currently 0
+          &lt;select name=&quot;old_row_first&quot; title=&quot;define the order, how log-records are displayed&quot;&gt;
+                      
+                       &lt;option          value=&quot;1&quot;&gt;Oldest log record First&lt;/option&gt;
+                       &lt;option selected value=&quot;0&quot;&gt;Newest Log Record First&lt;/option&gt;
+                      
+          &lt;/select&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;submit&quot;   style=&quot; background-color: #FFFFC0; border: 3pt ridge lightgrey&quot;&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;/form&gt;
+    &lt;/table&gt;
+     &lt;table class=&quot;htable&quot;&gt;
+      &lt;tr class=&quot;heading&quot;&gt;&lt;th&gt;Date&lt;/th&gt;
+                          &lt;th&gt;Level&lt;/th&gt;
+                          &lt;th&gt;System&lt;/th&gt;
+                          &lt;th&gt;App&lt;/th&gt;
+                          &lt;th&gt;Module&lt;/th&gt;
+                          &lt;th&gt;Message&lt;/th&gt;
+                          &lt;th&gt;Exception&lt;/th&gt;
+                          &lt;th&gt;Stack info&lt;/th&gt;
+      &lt;/tr&gt;
+
+      
+    &lt;/table&gt;
+
+
+
+    
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+    &lt;title&gt; TESTING Logging Server Status Page &lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Start old icon 
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;link rel=&quot;icon&quot;          href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+--&gt;
+
+&lt;!-- Start new icon --&gt; 
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;57x57&quot;          href=&quot;/static/favicon/apple-icon-57x57.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;60x60&quot;          href=&quot;/static/favicon/apple-icon-60x60.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;72x72&quot;          href=&quot;/static/favicon/apple-icon-72x72.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;76x76&quot;          href=&quot;/static/favicon/apple-icon-76x76.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;114x114&quot;        href=&quot;/static/favicon/apple-icon-114x114.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;120x120&quot;        href=&quot;/static/favicon/apple-icon-120x120.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;144x144&quot;        href=&quot;/static/favicon/apple-icon-144x144.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;152x152&quot;        href=&quot;/static/favicon/apple-icon-152x152.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;180x180&quot;        href=&quot;/static/favicon/apple-icon-180x180.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;192x192&quot;        href=&quot;/static/favicon/android-icon-192x192.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;32x32&quot;          href=&quot;/static/favicon/favicon-32x32.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;96x96&quot;          href=&quot;/static/favicon/favicon-96x96.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;16x16&quot;          href=&quot;/static/favicon/favicon-16x16.png&quot;&gt;
+&lt;link rel=&quot;manifest&quot;                                lref=&quot;/manifest.json&quot;&gt;
+&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ffffff&quot;&gt;
+&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;/ms-icon-144x144.png&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;
+&lt;!-- Fin new icon --&gt; 
+
+
+
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/logging_server.css&quot;&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    
+&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;&lt;a class=&quot;navbar-brand&quot; href=&quot;/index&quot;&gt;
+                      TESTING Logging Server Status Page
+                   &lt;/a&gt;
+                &lt;/li&gt;
+                
+                     &lt;li&gt;&lt;a href=&quot;/logout&quot;&gt;       Log Out&lt;/a&gt;&lt;/li&gt;
+                     &lt;li&gt;&lt;a href=&quot;/reset_database&quot;&gt;clean &gt; 30 days&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+    
+&lt;table&gt;
+     &lt;tr&gt;&lt;td&gt;
+       &lt;form action=&quot;/&quot; method=&quot;post&quot;  accept-charset=&quot;ISO-8859-1&quot;&gt;
+           &lt;select name=&quot;SYSTEM_ID&quot; title=&quot;Define SYSTEM_ID&quot;&gt;
+                
+                   &lt;option   selected            value=&quot;None&quot;&gt;
+                    None 
+                   &lt;/option&gt;
+               
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SYSTEM_ID&quot; title=&quot;Define SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected      value=&quot;None&quot;&gt;
+                  None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SUB_SYSTEM_ID&quot; title=&quot;DEFINE SUB_SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected  value=&quot;None&quot;&gt;
+                   None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_1&quot; title=&quot;DEFINE USER_SPEC_1&quot;&gt;
+              
+                 &lt;option       selected       value=&quot;None&quot;&gt;None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_2&quot; title=&quot;DEFINE USER_SPEC_2&quot; &gt;
+              
+                 &lt;option           selected    value=&quot;None&quot;&gt;
+                      None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;PRODUKT_ID&quot; title=&quot;DEFINE PRODUKT_ID&quot;&gt;
+              
+                 &lt;option          selected    value=&quot;None&quot;&gt;
+                   None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;tr&gt;&lt;td&gt;
+           &lt;input name=&quot;pattern&quot; size=&quot;12&quot; value=&quot;&quot; title=&quot;define a pattern to search for&quot;&gt;
+           &lt;input name=&quot;starting_at&quot; size=&quot;20&quot; value=&quot;2018-01-18 21:46:32.600640&quot; title=&quot;adapt the starting time range for the request&quot; &gt;
+           &lt;select name=&quot;notify_level&quot; title=&quot;define the log level upon which records will be displayed&quot;&gt;
+                   
+                      
+                       &lt;option          value=&quot;00&quot;&gt;ALL   (&gt;00)&lt;/option&gt;
+                       &lt;option          value=&quot;10&quot;&gt;DEBUG (&gt;10)&lt;/option&gt;
+                       &lt;option          value=&quot;20&quot;&gt;INFO  (&gt;20)&lt;/option&gt;
+                       &lt;option selected value=&quot;30&quot;&gt;ERROR (&gt;30)&lt;/option&gt;
+                      
+      
+                 &lt;/select&gt;
+          &lt;input name=&quot;max_rows&quot; size=&quot;6&quot; value=&quot;1000&quot; title=&quot;define the maximum number of log records to retrieve&quot;&gt; 
+          Currently 0
+          &lt;select name=&quot;old_row_first&quot; title=&quot;define the order, how log-records are displayed&quot;&gt;
+                      
+                       &lt;option          value=&quot;1&quot;&gt;Oldest log record First&lt;/option&gt;
+                       &lt;option selected value=&quot;0&quot;&gt;Newest Log Record First&lt;/option&gt;
+                      
+          &lt;/select&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;submit&quot;   style=&quot; background-color: #FFFFC0; border: 3pt ridge lightgrey&quot;&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;/form&gt;
+    &lt;/table&gt;
+     &lt;table class=&quot;htable&quot;&gt;
+      &lt;tr class=&quot;heading&quot;&gt;&lt;th&gt;Date&lt;/th&gt;
+                          &lt;th&gt;Level&lt;/th&gt;
+                          &lt;th&gt;System&lt;/th&gt;
+                          &lt;th&gt;App&lt;/th&gt;
+                          &lt;th&gt;Module&lt;/th&gt;
+                          &lt;th&gt;Message&lt;/th&gt;
+                          &lt;th&gt;Exception&lt;/th&gt;
+                          &lt;th&gt;Stack info&lt;/th&gt;
+      &lt;/tr&gt;
+
+      
+    &lt;/table&gt;
+
+
+
+    
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+===================================
+b&apos;&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n  &lt;head&gt;\n\n    &lt;title&gt; TESTING Logging Server Status Page &lt;/title&gt;\n    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;\n    &lt;!-- Bootstrap --&gt;\n    &lt;link href=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;\n&lt;!-- Start old icon \n&lt;link rel=&quot;shortcut icon&quot; href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;\n&lt;link rel=&quot;icon&quot;          href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;\n--&gt;\n\n&lt;!-- Start new icon --&gt; \n&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;57x57&quot;          href=&quot;/static/favicon/apple-icon-57x57.png&quot;&gt;\n&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;60x60&quot;          href=&quot;/static/favicon/apple-icon-60x60.png&quot;&gt;\n&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;72x72&quot;          href=&quot;/static/favicon/apple-icon-72x72.png&quot;&gt;\n&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;76x76&quot;          href=&quot;/static/favicon/apple-icon-76x76.png&quot;&gt;\n&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;114x114&quot;        href=&quot;/static/favicon/apple-icon-114x114.png&quot;&gt;\n&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;120x120&quot;        href=&quot;/static/favicon/apple-icon-120x120.png&quot;&gt;\n&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;144x144&quot;        href=&quot;/static/favicon/apple-icon-144x144.png&quot;&gt;\n&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;152x152&quot;        href=&quot;/static/favicon/apple-icon-152x152.png&quot;&gt;\n&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;180x180&quot;        href=&quot;/static/favicon/apple-icon-180x180.png&quot;&gt;\n&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;192x192&quot;        href=&quot;/static/favicon/android-icon-192x192.png&quot;&gt;\n&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;32x32&quot;          href=&quot;/static/favicon/favicon-32x32.png&quot;&gt;\n&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;96x96&quot;          href=&quot;/static/favicon/favicon-96x96.png&quot;&gt;\n&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;16x16&quot;          href=&quot;/static/favicon/favicon-16x16.png&quot;&gt;\n&lt;link rel=&quot;manifest&quot;                                lref=&quot;/manifest.json&quot;&gt;\n&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ffffff&quot;&gt;\n&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;/ms-icon-144x144.png&quot;&gt;\n&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;\n&lt;!-- Fin new icon --&gt; \n\n\n\n\n\n&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/logging_server.css&quot;&gt;\n\n  &lt;/head&gt;\n  &lt;body&gt;\n    \n&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;\n    &lt;div class=&quot;container&quot;&gt;\n        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;\n            &lt;ul class=&quot;nav navbar-nav&quot;&gt;\n                &lt;li&gt;&lt;a class=&quot;navbar-brand&quot; href=&quot;/index&quot;&gt;\n                      TESTING Logging Server Status Page\n                   &lt;/a&gt;\n                &lt;/li&gt;\n                \n                     &lt;li&gt;&lt;a href=&quot;/logout&quot;&gt;       Log Out&lt;/a&gt;&lt;/li&gt;\n                     &lt;li&gt;&lt;a href=&quot;/reset_database&quot;&gt;clean &gt; 30 days&lt;/a&gt;&lt;/li&gt;\n                \n            &lt;/ul&gt;\n        &lt;/div&gt;\n    &lt;/div&gt;\n&lt;/div&gt;\n\n    \n&lt;table&gt;\n     &lt;tr&gt;&lt;td&gt;\n       &lt;form action=&quot;/&quot; method=&quot;post&quot;  accept-charset=&quot;ISO-8859-1&quot;&gt;\n           &lt;select name=&quot;SYSTEM_ID&quot; title=&quot;Define SYSTEM_ID&quot;&gt;\n                \n                   &lt;option             value=&quot;None&quot;&gt;\n                    None \n                   &lt;/option&gt;\n               \n           &lt;/select&gt;\n           &lt;select name=&quot;SUB_SYSTEM_ID&quot; title=&quot;Define SUB_SYSTEM_ID&quot;&gt;\n              \n                 &lt;option           value=&quot;None&quot;&gt;\n                  None\n                 &lt;/option&gt;\n              \n           &lt;/select&gt;\n           &lt;select name=&quot;SUB_SUB_SYSTEM_ID&quot; title=&quot;DEFINE SUB_SUB_SYSTEM_ID&quot;&gt;\n              \n                 &lt;option       value=&quot;None&quot;&gt;\n                   None \n                 &lt;/option&gt;\n              \n           &lt;/select&gt;\n           &lt;select name=&quot;USER_SPEC_1&quot; title=&quot;DEFINE USER_SPEC_1&quot;&gt;\n              \n                 &lt;option            value=&quot;None&quot;&gt;None\n                 &lt;/option&gt;\n              \n           &lt;/select&gt;\n           &lt;select name=&quot;USER_SPEC_2&quot; title=&quot;DEFINE USER_SPEC_2&quot; &gt;\n              \n                 &lt;option             value=&quot;None&quot;&gt;\n                      None \n                 &lt;/option&gt;\n              \n           &lt;/select&gt;\n           &lt;select name=&quot;PRODUKT_ID&quot; title=&quot;DEFINE PRODUKT_ID&quot;&gt;\n              \n                 &lt;option            value=&quot;None&quot;&gt;\n                   None\n                 &lt;/option&gt;\n              \n           &lt;/select&gt;\n     &lt;/td&gt;&lt;/tr&gt;\n     &lt;tr&gt;&lt;td&gt;\n           &lt;input name=&quot;pattern&quot; size=&quot;12&quot; value=&quot;An Sring which for shure is not in the template&quot; title=&quot;define a pattern to search for&quot;&gt;\n           &lt;input name=&quot;starting_at&quot; size=&quot;20&quot; value=&quot;starting_at&quot; title=&quot;adapt the starting time range for the request&quot; &gt;\n           &lt;select name=&quot;notify_level&quot; title=&quot;define the log level upon which records will be displayed&quot;&gt;\n                   \n                      \n                       &lt;option          value=&quot;00&quot;&gt;ALL   (&gt;00)&lt;/option&gt;\n                       &lt;option          value=&quot;10&quot;&gt;DEBUG (&gt;10)&lt;/option&gt;\n                       &lt;option          value=&quot;20&quot;&gt;INFO  (&gt;20)&lt;/option&gt;\n                       &lt;option selected value=&quot;30&quot;&gt;ERROR (&gt;30)&lt;/option&gt;\n                      \n      \n                 &lt;/select&gt;\n          &lt;input name=&quot;max_rows&quot; size=&quot;6&quot; value=&quot;10&quot; title=&quot;define the maximum number of log records to retrieve&quot;&gt; \n          Currently 0\n          &lt;select name=&quot;old_row_first&quot; title=&quot;define the order, how log-records are displayed&quot;&gt;\n                      \n                       &lt;option selected value=&quot;1&quot;&gt;Oldest log record First&lt;/option&gt;\n                       &lt;option          value=&quot;0&quot;&gt;Newest Log Record First&lt;/option&gt;\n                      \n          &lt;/select&gt;\n          &lt;input type=&quot;submit&quot; value=&quot;submit&quot;   style=&quot; background-color: #FFFFC0; border: 3pt ridge lightgrey&quot;&gt;\n     &lt;/td&gt;&lt;/tr&gt;\n     &lt;/form&gt;\n    &lt;/table&gt;\n     &lt;table class=&quot;htable&quot;&gt;\n      &lt;tr class=&quot;heading&quot;&gt;&lt;th&gt;Date&lt;/th&gt;\n                          &lt;th&gt;Level&lt;/th&gt;\n                          &lt;th&gt;System&lt;/th&gt;\n                          &lt;th&gt;App&lt;/th&gt;\n                          &lt;th&gt;Module&lt;/th&gt;\n                          &lt;th&gt;Message&lt;/th&gt;\n                          &lt;th&gt;Exception&lt;/th&gt;\n                          &lt;th&gt;Stack info&lt;/th&gt;\n      &lt;/tr&gt;\n\n      \n    &lt;/table&gt;\n\n\n\n    \n    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;\n    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;\n  &lt;/body&gt;\n&lt;/html&gt;\n&apos;
+===================================
+</system-out></testcase><testcase classname="tests.test_app.HomepageCheck" file="tests/test_app.py" line="147" name="test_home_page2" time="0.3175773620605469"><system-out>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+    &lt;title&gt; TESTING Logging Server Status Page &lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Start old icon 
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;link rel=&quot;icon&quot;          href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+--&gt;
+
+&lt;!-- Start new icon --&gt; 
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;57x57&quot;          href=&quot;/static/favicon/apple-icon-57x57.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;60x60&quot;          href=&quot;/static/favicon/apple-icon-60x60.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;72x72&quot;          href=&quot;/static/favicon/apple-icon-72x72.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;76x76&quot;          href=&quot;/static/favicon/apple-icon-76x76.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;114x114&quot;        href=&quot;/static/favicon/apple-icon-114x114.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;120x120&quot;        href=&quot;/static/favicon/apple-icon-120x120.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;144x144&quot;        href=&quot;/static/favicon/apple-icon-144x144.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;152x152&quot;        href=&quot;/static/favicon/apple-icon-152x152.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;180x180&quot;        href=&quot;/static/favicon/apple-icon-180x180.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;192x192&quot;        href=&quot;/static/favicon/android-icon-192x192.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;32x32&quot;          href=&quot;/static/favicon/favicon-32x32.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;96x96&quot;          href=&quot;/static/favicon/favicon-96x96.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;16x16&quot;          href=&quot;/static/favicon/favicon-16x16.png&quot;&gt;
+&lt;link rel=&quot;manifest&quot;                                lref=&quot;/manifest.json&quot;&gt;
+&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ffffff&quot;&gt;
+&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;/ms-icon-144x144.png&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;
+&lt;!-- Fin new icon --&gt; 
+
+
+
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/logging_server.css&quot;&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    
+&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;&lt;a class=&quot;navbar-brand&quot; href=&quot;/index&quot;&gt;
+                      TESTING Logging Server Status Page
+                   &lt;/a&gt;
+                &lt;/li&gt;
+                
+                     &lt;li&gt;&lt;a href=&quot;/login&quot;&gt;Log In&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+    
+&lt;table&gt;
+     &lt;tr&gt;&lt;td&gt;
+       &lt;form action=&quot;/&quot; method=&quot;post&quot;  accept-charset=&quot;ISO-8859-1&quot;&gt;
+           &lt;select name=&quot;SYSTEM_ID&quot; title=&quot;Define SYSTEM_ID&quot;&gt;
+                
+                   &lt;option   selected            value=&quot;None&quot;&gt;
+                    None 
+                   &lt;/option&gt;
+               
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SYSTEM_ID&quot; title=&quot;Define SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected      value=&quot;None&quot;&gt;
+                  None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SUB_SYSTEM_ID&quot; title=&quot;DEFINE SUB_SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected  value=&quot;None&quot;&gt;
+                   None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_1&quot; title=&quot;DEFINE USER_SPEC_1&quot;&gt;
+              
+                 &lt;option       selected       value=&quot;None&quot;&gt;None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_2&quot; title=&quot;DEFINE USER_SPEC_2&quot; &gt;
+              
+                 &lt;option           selected    value=&quot;None&quot;&gt;
+                      None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;PRODUKT_ID&quot; title=&quot;DEFINE PRODUKT_ID&quot;&gt;
+              
+                 &lt;option          selected    value=&quot;None&quot;&gt;
+                   None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;tr&gt;&lt;td&gt;
+           &lt;input name=&quot;pattern&quot; size=&quot;12&quot; value=&quot;&quot; title=&quot;define a pattern to search for&quot;&gt;
+           &lt;input name=&quot;starting_at&quot; size=&quot;20&quot; value=&quot;2018-01-18 21:46:32.924315&quot; title=&quot;adapt the starting time range for the request&quot; &gt;
+           &lt;select name=&quot;notify_level&quot; title=&quot;define the log level upon which records will be displayed&quot;&gt;
+                   
+                      
+                       &lt;option          value=&quot;00&quot;&gt;ALL   (&gt;00)&lt;/option&gt;
+                       &lt;option          value=&quot;10&quot;&gt;DEBUG (&gt;10)&lt;/option&gt;
+                       &lt;option          value=&quot;20&quot;&gt;INFO  (&gt;20)&lt;/option&gt;
+                       &lt;option selected value=&quot;30&quot;&gt;ERROR (&gt;30)&lt;/option&gt;
+                      
+      
+                 &lt;/select&gt;
+          &lt;input name=&quot;max_rows&quot; size=&quot;6&quot; value=&quot;1000&quot; title=&quot;define the maximum number of log records to retrieve&quot;&gt; 
+          Currently 0
+          &lt;select name=&quot;old_row_first&quot; title=&quot;define the order, how log-records are displayed&quot;&gt;
+                      
+                       &lt;option          value=&quot;1&quot;&gt;Oldest log record First&lt;/option&gt;
+                       &lt;option selected value=&quot;0&quot;&gt;Newest Log Record First&lt;/option&gt;
+                      
+          &lt;/select&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;submit&quot;   style=&quot; background-color: #FFFFC0; border: 3pt ridge lightgrey&quot;&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;/form&gt;
+    &lt;/table&gt;
+     &lt;table class=&quot;htable&quot;&gt;
+      &lt;tr class=&quot;heading&quot;&gt;&lt;th&gt;Date&lt;/th&gt;
+                          &lt;th&gt;Level&lt;/th&gt;
+                          &lt;th&gt;System&lt;/th&gt;
+                          &lt;th&gt;App&lt;/th&gt;
+                          &lt;th&gt;Module&lt;/th&gt;
+                          &lt;th&gt;Message&lt;/th&gt;
+                          &lt;th&gt;Exception&lt;/th&gt;
+                          &lt;th&gt;Stack info&lt;/th&gt;
+      &lt;/tr&gt;
+
+      
+    &lt;/table&gt;
+
+
+
+    
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+
+    &lt;title&gt; TESTING Logging Server Status Page &lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;!-- Bootstrap --&gt;
+    &lt;link href=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;!-- Start old icon 
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+&lt;link rel=&quot;icon&quot;          href=&quot;/static/favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;
+--&gt;
+
+&lt;!-- Start new icon --&gt; 
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;57x57&quot;          href=&quot;/static/favicon/apple-icon-57x57.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;60x60&quot;          href=&quot;/static/favicon/apple-icon-60x60.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;72x72&quot;          href=&quot;/static/favicon/apple-icon-72x72.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;76x76&quot;          href=&quot;/static/favicon/apple-icon-76x76.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;114x114&quot;        href=&quot;/static/favicon/apple-icon-114x114.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;120x120&quot;        href=&quot;/static/favicon/apple-icon-120x120.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;144x144&quot;        href=&quot;/static/favicon/apple-icon-144x144.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;152x152&quot;        href=&quot;/static/favicon/apple-icon-152x152.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot;                  sizes=&quot;180x180&quot;        href=&quot;/static/favicon/apple-icon-180x180.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;192x192&quot;        href=&quot;/static/favicon/android-icon-192x192.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;32x32&quot;          href=&quot;/static/favicon/favicon-32x32.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;96x96&quot;          href=&quot;/static/favicon/favicon-96x96.png&quot;&gt;
+&lt;link rel=&quot;icon&quot;             type=&quot;image/png&quot; sizes=&quot;16x16&quot;          href=&quot;/static/favicon/favicon-16x16.png&quot;&gt;
+&lt;link rel=&quot;manifest&quot;                                lref=&quot;/manifest.json&quot;&gt;
+&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#ffffff&quot;&gt;
+&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;/ms-icon-144x144.png&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#ffffff&quot;&gt;
+&lt;!-- Fin new icon --&gt; 
+
+
+
+
+
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/static/logging_server.css&quot;&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    
+&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;&lt;a class=&quot;navbar-brand&quot; href=&quot;/index&quot;&gt;
+                      TESTING Logging Server Status Page
+                   &lt;/a&gt;
+                &lt;/li&gt;
+                
+                     &lt;li&gt;&lt;a href=&quot;/logout&quot;&gt;       Log Out&lt;/a&gt;&lt;/li&gt;
+                     &lt;li&gt;&lt;a href=&quot;/reset_database&quot;&gt;clean &gt; 30 days&lt;/a&gt;&lt;/li&gt;
+                
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+    
+&lt;table&gt;
+     &lt;tr&gt;&lt;td&gt;
+       &lt;form action=&quot;/&quot; method=&quot;post&quot;  accept-charset=&quot;ISO-8859-1&quot;&gt;
+           &lt;select name=&quot;SYSTEM_ID&quot; title=&quot;Define SYSTEM_ID&quot;&gt;
+                
+                   &lt;option   selected            value=&quot;None&quot;&gt;
+                    None 
+                   &lt;/option&gt;
+               
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SYSTEM_ID&quot; title=&quot;Define SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected      value=&quot;None&quot;&gt;
+                  None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;SUB_SUB_SYSTEM_ID&quot; title=&quot;DEFINE SUB_SUB_SYSTEM_ID&quot;&gt;
+              
+                 &lt;option       selected  value=&quot;None&quot;&gt;
+                   None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_1&quot; title=&quot;DEFINE USER_SPEC_1&quot;&gt;
+              
+                 &lt;option       selected       value=&quot;None&quot;&gt;None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;USER_SPEC_2&quot; title=&quot;DEFINE USER_SPEC_2&quot; &gt;
+              
+                 &lt;option           selected    value=&quot;None&quot;&gt;
+                      None 
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+           &lt;select name=&quot;PRODUKT_ID&quot; title=&quot;DEFINE PRODUKT_ID&quot;&gt;
+              
+                 &lt;option          selected    value=&quot;None&quot;&gt;
+                   None
+                 &lt;/option&gt;
+              
+           &lt;/select&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;tr&gt;&lt;td&gt;
+           &lt;input name=&quot;pattern&quot; size=&quot;12&quot; value=&quot;&quot; title=&quot;define a pattern to search for&quot;&gt;
+           &lt;input name=&quot;starting_at&quot; size=&quot;20&quot; value=&quot;2018-01-18 21:46:32.924315&quot; title=&quot;adapt the starting time range for the request&quot; &gt;
+           &lt;select name=&quot;notify_level&quot; title=&quot;define the log level upon which records will be displayed&quot;&gt;
+                   
+                      
+                       &lt;option          value=&quot;00&quot;&gt;ALL   (&gt;00)&lt;/option&gt;
+                       &lt;option          value=&quot;10&quot;&gt;DEBUG (&gt;10)&lt;/option&gt;
+                       &lt;option          value=&quot;20&quot;&gt;INFO  (&gt;20)&lt;/option&gt;
+                       &lt;option selected value=&quot;30&quot;&gt;ERROR (&gt;30)&lt;/option&gt;
+                      
+      
+                 &lt;/select&gt;
+          &lt;input name=&quot;max_rows&quot; size=&quot;6&quot; value=&quot;1000&quot; title=&quot;define the maximum number of log records to retrieve&quot;&gt; 
+          Currently 0
+          &lt;select name=&quot;old_row_first&quot; title=&quot;define the order, how log-records are displayed&quot;&gt;
+                      
+                       &lt;option          value=&quot;1&quot;&gt;Oldest log record First&lt;/option&gt;
+                       &lt;option selected value=&quot;0&quot;&gt;Newest Log Record First&lt;/option&gt;
+                      
+          &lt;/select&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;submit&quot;   style=&quot; background-color: #FFFFC0; border: 3pt ridge lightgrey&quot;&gt;
+     &lt;/td&gt;&lt;/tr&gt;
+     &lt;/form&gt;
+    &lt;/table&gt;
+     &lt;table class=&quot;htable&quot;&gt;
+      &lt;tr class=&quot;heading&quot;&gt;&lt;th&gt;Date&lt;/th&gt;
+                          &lt;th&gt;Level&lt;/th&gt;
+                          &lt;th&gt;System&lt;/th&gt;
+                          &lt;th&gt;App&lt;/th&gt;
+                          &lt;th&gt;Module&lt;/th&gt;
+                          &lt;th&gt;Message&lt;/th&gt;
+                          &lt;th&gt;Exception&lt;/th&gt;
+                          &lt;th&gt;Stack info&lt;/th&gt;
+      &lt;/tr&gt;
+
+      
+    &lt;/table&gt;
+
+
+
+    
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</system-out></testcase></testsuite>

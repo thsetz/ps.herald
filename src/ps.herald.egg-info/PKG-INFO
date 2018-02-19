@@ -1,0 +1,37 @@
+Metadata-Version: 1.1
+Name: ps.herald
+Version: 0.1.34
+Summary: Monitoring in the PS environment
+Home-page: www.setz.de
+Author: Setz
+Author-email: Thomas.Setz@haufe-lexware.com
+License: UNKNOWN
+Description: Introduction
+        ============
+        
+        The Herald  package provides three tools usable to monitor the behaviour of distributed applications
+        
+        Herald's functionality is based on the **Basic** class, defined in the ps.basic package.
+        
+        The **Basic** class enhances/uses the standard python logging package - especially  the ability to log messages 
+        to a stream-socket.
+        
+        This package adds mechanisms to:
+        
+                        - put these messages into a central database (bridge)
+                        - route/bridge  these messages to additional destinations (bridge)
+                        - display in a web-server (herald)
+                        - take actions on special messages (neelix)
+                        - take actions on lost system heartbeat (neelix)
+        
+        
+        
+        
+         
+        
+        
+        
+Keywords: PS
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
