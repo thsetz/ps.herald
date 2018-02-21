@@ -7,10 +7,6 @@ VERSION.txt
 setup.cfg
 setup.py
 tox.ini
-requirements/._common.txt
-requirements/._dev.txt
-requirements/._heroku.txt
-requirements/._prod.txt
 requirements/common.txt
 requirements/dev.txt
 requirements/heroku.txt
