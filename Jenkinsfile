@@ -1,24 +1,40 @@
 #!/usr/bin/env groovy
 pipeline {
-    agent any
-
+    //agent { docker { image 'python:3.7' } }
+    agent { docker { image 'drsetz/python-with-graphviz:3.7.1' } }
     stages {
         stage('Build') {
-            steps { echo 'Building ...' 
+            steps { echo 'Building ...'
+                    //sh 'sudo apt install python-pydot python-pydot-ng graphviz'
+                    sh 'uname -a'
                     sh 'make init || true '
-                    sh 'make doc'
                   }
         }
         stage('Unit Test') {
-            steps { echo 'Unit Testing..' }
+            steps { echo 'Unit Testing..'
+                    sh 'make unit_test'
+                    sh 'make coverage'
+                  }
         }
         stage('docTest') {
-            steps { echo 'doc Testing..' }
+            steps { echo 'doc Testing..'
+                   sh 'rm dist/*'
+                   sh 'make doc'
+            }
         }
         stage('Deploy') {
-            steps { echo 'Deploying....' 
-                    sh '#!/usr/bin/env bash \n' + 'source ./venv/bin/activate && devpi use http://setz.dnshome.de:4040/setzt/DEVELOPMENT && devpi login setzt --password setzt && devpi upload --with-docs'
+            steps { echo 'Deploying....'
+                    //# remove the old egg
+                    sh '/bin/rm dist/* '
+                    //# create a new  egg (with the new version number)
+                    sh 'make doc '
+                    sh 'ls dist/*'
+                    //# upload to pypi
+                    sh '#!/usr/bin/env bash \n' + 'source ./venv/bin/activate && twine upload -u thsetz -p Pypi123456789012 --verbose --repository-url https://test.pypi.org/legacy/ dist/* '
+
+
                   }
         }
     }
 }
+
