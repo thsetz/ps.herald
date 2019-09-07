@@ -23,6 +23,7 @@ pipeline {
                    sh 'cd docs && make html'
                    //sh 'make doc'
             }
+        }
         stage('docTest') {
             steps { echo 'doc Testing..' 
                    sh 'cd docs && make doctest'
