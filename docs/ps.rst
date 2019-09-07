@@ -1,6 +1,7 @@
-herald package
-==============
-The Herald  package provides three tools usable to monitor the behaviour of distributed applications
+ps_herald package
+=================
+
+The ps_herald  package provides three tools usable to monitor the behaviour of distributed applications
 
 Herald's functionality is based on the **Basic** class, defined in the ps.basic package. For ease of use, we provide the
 current documentation of that package at the end of this section. Within that documentation you'll  be enabled to use the 
