@@ -18,9 +18,14 @@ pipeline {
                     //sh 'make coverage'
                   }
         }
+        stage('doc') {
+            steps { echo 'generate doc ..' 
+                   sh 'cd docs && make html'
+                   //sh 'make doc'
+            }
         stage('docTest') {
             steps { echo 'doc Testing..' 
-                   //sh 'rm dist/*'
+                   sh 'cd docs && make doctest'
                    //sh 'make doc'
             }
         }
