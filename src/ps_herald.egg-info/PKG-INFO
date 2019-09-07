@@ -2,9 +2,9 @@ Metadata-Version: 1.1
 Name: ps-herald
 Version: 1.0.0
 Summary: Monitoring in the PS environment
-Home-page: www.setz.de
+Home-page: https://bitbucket.org/drsetz/ps.herald
 Author: Setz
-Author-email: Thomas.Setz@haufe-lexware.com
+Author-email: Thomas.Setz@acm.org
 License: UNKNOWN
 Description: Introduction
         ============
@@ -33,5 +33,8 @@ Description: Introduction
         
 Keywords: PS
 Platform: UNKNOWN
-Classifier: Programming Language :: Python
-Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Environment :: Console
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Utilities
