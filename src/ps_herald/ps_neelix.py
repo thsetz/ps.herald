@@ -61,12 +61,7 @@ import sys
 import logging
 import pdb
 from socket import gethostname
-# make sure we can import from app directory
-l = os.path.split(os.path.dirname(os.path.abspath(__file__)))[:-1]
-print(l[0])
-sys.path.append(l[0])
 
-for i in sys.path: print(i)
 from ps_herald import db,create_app,cli
 from ps_herald.models import User, Post, Log,HeartBeat
 
