@@ -7,9 +7,9 @@ import os,sys
 base_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)),'..')
 sys.path.append(base_dir)
 
-from app import create_app, db
-from app.models import User, Post,Log
-from app import Config
+from ps_herald import create_app, db
+from ps_herald.models import User, Post,Log
+from ps_herald import Config
 
 
 class TestConfig(Config):
@@ -20,6 +20,7 @@ class TestConfig(Config):
 
 class UserModelCase(unittest.TestCase):
     def setUp(self):
+        os.environ['DEV_STAGE'] = "TESTING"
         self.app = create_app(TestConfig)
         self.app_context = self.app.app_context()
         self.app_context.push()
