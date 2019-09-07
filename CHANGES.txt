@@ -7,3 +7,4 @@ aa5e17c fix typos
 06f5193 fix typos
 11b211f use real pypi account for upload
 9878a8a rm assumed typo
+a92ac8d enhance docu
