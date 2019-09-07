@@ -41,7 +41,8 @@ pipeline {
                     echo 'Deploying....should now generate a new distribution' 
                     sh 'python setup.py sdist'
                     //# upload to pypi
-                    sh '#!/usr/bin/env bash \n' + 'source ./venv/bin/activate && twine upload -u thsetz -p Pypi123456789012 --verbose --repository-url https://test.pypi.org/legacy/ dist/* '
+                    //sh '#!/usr/bin/env bash \n' + 'source ./venv/bin/activate && twine upload -u thsetz -p Pypi123456789012 --verbose --repository-url https://test.pypi.org/legacy/ dist/* '
+                    sh '#!/usr/bin/env bash \n' + 'source ./venv/bin/activate && twine upload -u thsetz -p pypi123456789012 --verbose / dist/* '
 
                    
                   }
