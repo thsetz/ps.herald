@@ -20,13 +20,14 @@ pipeline {
         }
         stage('doc') {
             steps { echo 'generate doc ..' 
-                   sh 'export DEV_STAGE=TESTING && cd docs && make html'
+                   //sh 'export DEV_STAGE=TESTING && cd docs && make html'
+                   sh 'cd docs && make html'
                    //sh 'make doc'
             }
         }
         stage('docTest') {
             steps { echo 'doc Testing..' 
-                   sh 'export DEV_STAGE=TESTING && cd docs && make doctest'
+                   sh 'cd docs && make doctest'
                    //sh 'make doc'
             }
         }
