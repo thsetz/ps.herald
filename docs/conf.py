@@ -37,6 +37,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     ## Include autosymmary
+    'sphinx.ext.doctest',
     'sphinx.ext.autosummary',
      "sphinx_rtd_theme",
 ]
