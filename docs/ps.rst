@@ -57,7 +57,7 @@ Submodules
 
 
         
-ps.herald module
+ps_herald module
 ----------------
 ps_herald is  a flask-based (http://flask.pocoo.org/)  web microframework, enabling us to display 
 logging messages of the participating systems/services. The flask implementation part is based
@@ -95,17 +95,17 @@ From left to right you see:
 Heralds Autodocumentation .....
 
 
-.. automodule:: ps.herald
+.. automodule:: ps_herald
     :members:
     :undoc-members:
     :show-inheritance:
 
 
-ps.bridge module
+ps_bridge module
 ----------------
 
 
-.. automodule:: ps.bridge
+.. automodule:: ps_bridge
     :members:
     :undoc-members:
     :show-inheritance:
@@ -116,11 +116,11 @@ ps.bridge module
 
 
 
-ps.neelix module
+ps_neelix module
 ----------------
 
 
-.. automodule:: ps.neelix
+.. automodule:: ps_neelix
     :members:
     :undoc-members:
     :show-inheritance:
