@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps { echo 'Building ...' 
                     //sh 'sudo apt install python-pydot python-pydot-ng graphviz'
-                    sh 'python setu.py install'
+                    sh 'python setup.py install'
                     //sh 'make upgrade'
                     //sh 'make init '
                   }
