@@ -32,7 +32,7 @@ named job_[a,b,x,1,2] in column 4 (Productionenvironment Runtime) ) it emits log
 
 Those logging messages are :
 
-     received by the ps_bridge daemon and the inserted into a local sqlite database e.g. herald_db_d.
+     received by the ps_bridge daemon and inserted into a local sqlite database e.g. herald_db_d.
     
 Those messages/events can be displayed/searched via herald. 
 
@@ -41,10 +41,14 @@ Those messages/events can be analyzed and further events could be triggered by n
 
 .. note::
     
-        the ps_bridge module allows for "duplication" of event streams - meaning it is possible to insert 
+        The ps_bridge module allows for "duplication" of event streams - meaning it is possible to insert 
         logging messages into the local database AND to additionaly send that message to another bridge 
-        (possibly residing on another machine/port).
+        (possibly residing on another machine/port). It is possible to route those message through 
+        different ssh tunnels - so that on the different levels of trust - the messages of the behind 
+        system could be analyzed. This is shown in the following picture.
 
+
+.. image:: secure_network.png
 
 
 
@@ -55,13 +59,14 @@ Submodules
         
 ps.herald module
 ----------------
-herald is a flask-based (http://flask.pocoo.org/ a web microframework) enabling us to display 
-logging messages of the participating systems/services.
+ps_herald is  a flask-based (http://flask.pocoo.org/)  web microframework, enabling us to display 
+logging messages of the participating systems/services. The flask implementation part is based
+on the documentation given on https://blog.miguelgrinberg.com/index.
 
 It uses sqlachemy to access the sqlite database.
 
 
-herald listens for html-requests (normally issued by an user-interface  e.g. firefox/safari/chrome ...)
+ps_herald listens for html-requests (normally issued by an user-interface  e.g. firefox/safari/chrome ...)
 and returns corresponding log-messages.
 
 The following picture shows a screenshot for the usage of  herald within google-chrome ...
