@@ -20,6 +20,7 @@
 project = 'ps_herald'
 copyright = '2019, Thomas Setz'
 author = 'Thomas Setz'
+master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
 release = '1.0.0'
