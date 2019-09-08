@@ -10,9 +10,16 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
+
+VERSION=open("../VERSION.txt").read().strip()
+
+try:
+  from ConfigParser import SafeConfigParser, ParsingError
+except:
+  from configparser import SafeConfigParser, ParsingError
 
 
 # -- Project information -----------------------------------------------------
@@ -37,6 +44,9 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.intersphinx',
     ## Include autosymmary
+    'sphinx.ext.todo',
+    'sphinx.ext.githubpages',
+    'sphinx.ext.coverage',
     'sphinx.ext.doctest',
     'sphinx.ext.autosummary',
      "sphinx_rtd_theme",
