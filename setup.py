@@ -5,7 +5,7 @@ import subprocess
 
 install_requires= open("requirements.txt").read().split()  
 
-version='1.0.11'
+version='1.0.12'
 
 
 setup(name='ps_herald',
