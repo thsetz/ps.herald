@@ -4,14 +4,12 @@ import sys
 import subprocess
 
 install_requires= open("requirements.txt").read().split()  
-VERSION = open('VERSION.txt').read().strip()
 
-here = os.path.abspath(os.path.dirname(__file__))
-open(os.path.join(here,'src', 'ps_herald','herald_package_version.py'), 'w').write('version = "%s"' % VERSION)
+version='1.0.11'
 
 
 setup(name='ps_herald',
-      version=VERSION,
+      version=version,
       description="Monitoring in the PS environment",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join( "HISTORY.txt")).read(),
