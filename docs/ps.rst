@@ -1,7 +1,7 @@
-ps_herald package
+ps.herald package
 =================
 
-The ps_herald  package provides three tools usable to monitor the behaviour of distributed applications
+The ps.herald  package provides three tools usable to monitor the behaviour of distributed applications
 
 Herald's functionality is based on the **Basic** class, defined in the ps.basic package. For ease of use, we provide the
 current documentation of that package at the end of this section. Within that documentation you'll  be enabled to use the 
@@ -58,16 +58,16 @@ Submodules
 
 
         
-ps_herald module
+ps.herald module
 ----------------
-ps_herald is  a flask-based (http://flask.pocoo.org/)  web microframework, enabling us to display 
+ps.herald is  a flask-based (http://flask.pocoo.org/)  web microframework, enabling us to display 
 logging messages of the participating systems/services. The flask implementation part is based
 on the documentation given on https://blog.miguelgrinberg.com/index.
 
 It uses sqlachemy to access the sqlite database.
 
 
-ps_herald listens for html-requests (normally issued by an user-interface  e.g. firefox/safari/chrome ...)
+ps.herald listens for html-requests (normally issued by an user-interface  e.g. firefox/safari/chrome ...)
 and returns corresponding log-messages.
 
 The following picture shows a screenshot for the usage of  herald within google-chrome ...
@@ -96,7 +96,7 @@ From left to right you see:
 Heralds Autodocumentation .....
 
 
-.. automodule:: ps_herald
+.. automodule:: ps.herald
     :members:
     :undoc-members:
     :show-inheritance:
@@ -106,7 +106,7 @@ ps_bridge module
 ----------------
 
 
-.. automodule:: ps_bridge
+.. .. automodule:: ps_bridge
     :members:
     :undoc-members:
     :show-inheritance:
@@ -121,7 +121,7 @@ ps_neelix module
 ----------------
 
 
-.. automodule:: ps_neelix
+.. .. automodule:: ps_neelix
     :members:
     :undoc-members:
     :show-inheritance:
@@ -130,7 +130,7 @@ ps_neelix module
 ps.Basic module
 ---------------
 
-.. automodule:: ps.Basic
+.. automodule:: ps.basic.Config
     :members:
     :undoc-members:
     :show-inheritance:
@@ -206,7 +206,7 @@ are (re)started on sulu
   # The ssh tunnel for the bridge bringing the data on port 9017 of the eu_cloud machine to the loacal bridge 
   01,17,24,36,45,51,10 * * * 0-6     ssh -f -oExitOnForwardFailure=yes -R 9017:localhost:9024 eu_cloud -N > /home/hcn/ssh_tunnel.log  2>&1
   4 */2 * * 0-7                      export DEV_STAGE=PRODUCTION; cd /home/hcn/HCN_DataTransfer/u14_20170801; source venv/bin/activate && ps_neelix                      > neelix.log 2>&1
-  04,16,36,44,51,01  * * * 0-7       export DEV_STAGE=PRODUCTION; cd /home/hcn/HCN_DataTransfer/u14_20170801; source venv/bin/activate && ps_herald                      > herald.log 2>&1
+  04,16,36,44,51,01  * * * 0-7       export DEV_STAGE=PRODUCTION; cd /home/hcn/HCN_DataTransfer/u14_20170801; source venv/bin/activate && ps.herald                      > herald.log 2>&1
   05,15,21,34,46,50,02  * * * 0-7    export DEV_STAGE=PRODUCTION; cd /home/hcn/HCN_DataTransfer/u14_20170801; source venv/bin/activate && ps_bridge -s 1309600 -r 1024   > bridge.log 2>&1
 
 

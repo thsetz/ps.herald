@@ -13,10 +13,10 @@ Welcome to ps_herald's documentation!
 
 
    ps
-   ps_herald
-   ps_herald.auth
-   ps_herald.errors
-   ps_herald.main
+..   ps_herald
+..   ps_herald.auth
+..   ps_herald.errors
+..   ps_herald.main
    modules
 
 

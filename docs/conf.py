@@ -14,8 +14,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
 
-VERSION=open("../VERSION.txt").read().strip()
-
+from ps.herald import __version__ as VERSION
 try:
   from ConfigParser import SafeConfigParser, ParsingError
 except:
@@ -24,7 +23,7 @@ except:
 
 # -- Project information -----------------------------------------------------
 
-project = 'ps_herald'
+project = 'ps.herald'
 copyright = '2019, Thomas Setz'
 author = 'Thomas Setz'
 master_doc = 'index'
