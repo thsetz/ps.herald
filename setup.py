@@ -1,7 +1,7 @@
 from setuptools import setup
 #install_requires=["flask","jinja2","ps.basic","sqlalchemy"]
 install_requires=["Flask", "click", "flask-sqlalchemy", "ps.basic"],
-version='1.0.13'
+version='1.1.0'
 
 setup(
     name="ps.herald",
