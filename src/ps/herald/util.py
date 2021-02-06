@@ -1,5 +1,0 @@
-"""
->>> import os
->>> assert True
-"""
-
