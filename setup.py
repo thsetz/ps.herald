@@ -1,6 +1,6 @@
 from setuptools import setup
 install_requires=["Flask", "click", "flask-sqlalchemy", "ps.basic"],
-version='1.1.3'
+version='1.2.0'
 
 setup(
     name="ps.herald",
