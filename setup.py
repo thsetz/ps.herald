@@ -9,7 +9,6 @@ setup(
     classifiers=[
           'Development Status :: 4 - Beta',
           'Intended Audience :: Developers',
-          'License :: GPL',
           'Operating System :: MacOS',
           'Operating System :: POSIX',
           'Operating System :: Microsoft :: Windows',
