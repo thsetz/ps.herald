@@ -1,14 +1,22 @@
+"""The models."""
+
+# from datetime import datetime
+from sqlalchemy import BigInteger, Column, Float, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Float, BigInteger
+# from dataclasses import dataclass
 
 Base = declarative_base()
 
 
+# @dataclass
 class Log(Base):
-    """The model currently is build around the data structure,
+    """The logging message.
+
+    The model currently is build around the data structure,
        the standard python logging mechanism uses to send logging
        Events across the **class logging.StreamHandler()**.
     """
+
     __tablename__ = "log"
     __table_args__ = {
         "sqlite_autoincrement": True
@@ -54,7 +62,12 @@ class Log(Base):
     user_spec_2 = Column(String(10))  # :e.g. User_specific_value_two
     summary = Column(String(70))  # :e.g. concatenation of the before values
 
+    def as_dict(self):
+        """Return row as dict."""
+        return {c.name: getattr(self, c.name) for c in self.__table__.columns}
+
     def __repr__(self):
+        """Return row as beein used in a´html table."""
         d = {}
         d["created"] = self.created
         d["package_version"] = self.package_version
@@ -96,7 +109,7 @@ class Log(Base):
 
 
 class HeartBeat(Base):
-    """Store the HeartBeat of the different systems """
+    """Store the HeartBeat of the different systems."""
 
     __tablename__ = "heartbeat"
     __table_args__ = {
@@ -108,6 +121,7 @@ class HeartBeat(Base):
     system_id = Column(String(10), unique=True)  # :e.g. SYSTEM_ID
 
     def __repr__(self):
+        """Return heartbeat repr."""
         return "<system_id: %r <heartbeat: %r" % (
             self.system_id,
             self.newest_heartbeat,

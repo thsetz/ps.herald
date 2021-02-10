@@ -1,11 +1,15 @@
 # XXX
-__version__ = "TBD"
+# get the version number defined in setup.py
+import pkg_resources
+__version__ = pkg_resources.get_distribution("ps.herald").version
 
 import os
 from ps.basic import Config
 
 from flask import Flask
 
+# needed to integrate java_script/angular apps
+from flask_cors import CORS
 
 def create_app(name, have_config_file=False, test_config=None):
     # create and configure the app
@@ -28,6 +32,9 @@ def create_app(name, have_config_file=False, test_config=None):
         if app.config["TESTING"]:
             Config.reset_singleton()
 
+#   needed to integrate java_script/angular apps
+    CORS(app)
+
     Config.Basic(name, have_config_file=have_config_file)
     app.config["DATABASE"] = Config.herald_sqlite_filename
     app.config["EXPLAIN_TEMPLATE_LOADING"] = True
@@ -40,4 +47,9 @@ def create_app(name, have_config_file=False, test_config=None):
     app.register_blueprint(bare_html_api.bp)
     app.add_url_rule("/", endpoint="index")
 
+    from . import angular_api
+
+    app.register_blueprint(angular_api.bp,url_prefix='/angular')
+    #app.add_url_rule("/", endpoint="index")
+    print(app.url_map) 
     return app
