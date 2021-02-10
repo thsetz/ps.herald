@@ -2,6 +2,12 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
+import { CmessagesComponent } from './cmessages/cmessages.component';
+import { ClogFormComponent } from './clog-form/clog-form.component';
+import { ClogListComponent } from './clog-list/clog-list.component';
+
+
+
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -9,7 +15,10 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        CmessagesComponent,
+        ClogFormComponent,
+        ClogListComponent 
       ],
     }).compileComponents();
   });
