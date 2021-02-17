@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/setzt/tmp_npm_test/MyToDo/src/polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /Users/setzt/NEW/ps.herald_newest/ps-herald-angular/src/polyfills.ts */"hN/g");
 
 
 /***/ }),

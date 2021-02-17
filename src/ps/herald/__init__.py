@@ -18,7 +18,11 @@ def create_app(name, have_config_file=False, test_config=None):
         name,
         instance_relative_config=True,
         template_folder=os.path.join(here, "templates"),
+        static_folder=os.path.join(here, "static"),
     )
+    
+    p = os.path.join(here, 'static')
+    print(f"STATIC FOLDER IS {p}")
     app.config.from_mapping(
         SECRET_KEY="dev",
         DATABASE=os.path.join(app.instance_path, "flaskr.sqlite"),

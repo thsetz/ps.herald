@@ -13,7 +13,8 @@ def get_engine():
     """
 
     if "engine" not in g:
-        g.engine = create_engine("sqlite:///" + current_app.config["DATABASE"])
+        #https://stackoverflow.com/questions/34009296/using-sqlalchemy-session-from-flask-raises-sqlite-objects-created-in-a-thread-c 
+        g.engine = create_engine("sqlite:///" + current_app.config["DATABASE"] + "?check_same_thread=False")
 
     # print(g.engine.url.database )
     # print(Config.herald_sqlite_filename)
@@ -30,14 +31,11 @@ def close_engine(e=None):
 
 def get_session():
     engine = get_engine()
-    session = scoped_session(
-        sessionmaker(autocommit=False, autoflush=False, bind=engine)
-    )
-    return session
-
-
-# Base = declarative_base()
-# Base.query = session.query_property()
+    if "session" not in g:
+        g.session= scoped_session(
+            sessionmaker(autocommit=False, autoflush=False, bind=engine)
+        )
+    return g.session
 
 
 def init_db():

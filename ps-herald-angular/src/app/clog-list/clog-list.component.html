@@ -1,1 +1,41 @@
-<p>clog-list works!</p>
+<div class="container">
+    <table class="htable">
+        <div>
+            <tr class="heading">
+                <td>Date</td>
+                <td>Level</td>
+                <td>System</td>
+                <td>App</td>
+                <td>Module</td>
+                <td>Message</td>
+                <td>Exception</td>
+                <td>Stack Info</td>
+            </tr>
+            <tr *ngFor="let log of logs" class="{{log.levelname}}">
+                <td>{{log.created}}</td>
+                <td>{{log.levelname}}</td>
+                <td>
+                    {{log.system_id}}<br>
+                    {{log.sub_system_id}}<br>
+                    {{log.sub_sub_system_id}}<br>
+                </td>
+                <td>
+                    {{log.produkt_id}}<br>
+                    {{log.user_spec1}}<br>
+                    {{log.user_spec2}}<br>
+                </td>
+                <td>
+                    {{log.module}}<br>
+                    {{log.package_version}}<br>
+                    {{log.funcname}}<br>
+                    line:{{log.lineno}}<br>
+                </td>
+                <td>{{log.message}}</td>
+                <td>{{log.exc_text}}</td>
+                <td>{{log.stack_info}}</td>
+
+            </tr>
+        </div>
+    </table>
+
+</div>

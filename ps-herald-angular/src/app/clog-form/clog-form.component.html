@@ -1,125 +1,170 @@
-<p>clog-form works!</p>
+<div class="container">
+<!-- {{diagnostic}} -->
+<form (ngSubmit)="onSubmit()" #LogForm="ngForm">
 <table>
     <tr>
         <td>
-             xx
+            <div class="form-group">
+                <label for="system_id">SYSTEM_ID</label><br>
+                <select class="form-control" 
+                        id="system_id" 
+                        required 
+                        [(ngModel)]="slogdataService.search_tuple.system_id" 
+                        name="system_id" 
+                        #name="ngModel">
+                    <option *ngFor="let system_id of slogdataService.search_options['system_ids']">{{system_id}}</option>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="sub_system_id">SUB_SYSTEM_ID</label><br>
+                <select class="form-control" 
+                        id="sub_system_id" 
+                        required [(ngModel)]="slogdataService.search_tuple.sub_system_id" 
+                        name="sub_system_id"
+                        #name="ngModel">
+                    <option *ngFor="let sub_system_id of slogdataService.search_options['sub_system_ids']">{{sub_system_id}}</option>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="sub_sub_system_id">SUB_SUB_SYSTEM_ID</label><br>
+                <select class="form-control" 
+                        id="sub_sub_system_id" 
+                        required 
+                        [(ngModel)]="slogdataService.search_tuple.sub_sub_system_id"
+                         name="sub_sub_system_id" 
+                         #name="ngModel">
+                    <option *ngFor="let sub_sub_system_id of slogdataService.search_options['sub_sub_system_ids']">{{sub_sub_system_id}}
+                    </option>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="user_spec1">USER_SPEC1</label><br>
+                <select class="form-control" 
+                        id="user_spec1" 
+                        required 
+                        [(ngModel)]="slogdataService.search_tuple.user_spec_1" 
+                        name="user_spec1"
+                        #name="ngModel">
+                    <option *ngFor="let user_spec1 of slogdataService.search_options['user_spec_1s']">{{user_spec1}}</option>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="user_spec2">USER_SPEC2</label><br>
+                <select class="form-control" 
+                        id="user_spec2" 
+                        required 
+                        [(ngModel)]="slogdataService.search_tuple.user_spec_2" 
+                        name="user_spec2"
+                        #name="ngModel">
+                    <option *ngFor="let user_spec2 of slogdataService.search_options['user_spec_2s']">{{user_spec2}}</option>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="produkt_id">PRODUKT_ID</label><br>
+                <select class="form-control" 
+                        id="produkt_id" 
+                        required 
+                        [(ngModel)]="slogdataService.search_tuple.produkt_id" 
+                        name="produkt_id"
+                    #name="ngModel">
+                    <option *ngFor="let produkt_id of slogdataService.search_options['produkt_ids']">{{produkt_id}}</option>
+                </select>
+            </div>
         </td>
     </tr>
-    <!--
+    <!-- Line two of the form -->
+        <td>
+            <div class="form-group">
+                <label for="pattern">Pattern</label><br>
+                <input type="text" 
+                       class="form-control" 
+                       id="pattern" 
+                       required 
+                       [(ngModel)]="slogdataService.search_tuple.pattern" 
+                       name="pattern"
+                    #pattern="ngModel">
+                <div [hidden]="pattern.valid || pattern.pristine" class="alert alert-danger">
+                    pattern is required
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="starting_at">Starting at</label><br>
+                <input type="text" 
+                       class="form-control" 
+                       id="starting_at" 
+                       required 
+                       [(ngModel)]="slogdataService.search_tuple.starting_at"
+                       name="starting_at" 
+                       #starting_at="ngModel">
+                <div [hidden]="starting_at.valid || starting_at.pristine" class="alert alert-danger">
+                    starting_at is required
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="notify_level">NOTIFY_LEVEL</label><br>
+                <select class="form-control" 
+                        id="notify_level" 
+                        required 
+                        [(ngModel)]="slogdataService.search_tuple.notify_level" 
+                        name="notify_level"
+                        #name="ngModel">
+                    <option *ngFor="let notify_level of slogdataService.search_options['notify_levels']">{{notify_level.value}}</option>
+                </select>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="num_records">Num Records</label><br>
+                <input type="text" 
+                       class="form-control" 
+                       id="num_records" 
+                       required 
+                       [(ngModel)]="slogdataService.search_tuple.num_records"
+                       name="num_records" 
+                       #num_records="ngModel">
+                <div [hidden]="num_records.valid || num_records.pristine" class="alert alert-danger">
+                    num_records is required
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="form-group">
+                <label for="order">order</label><br>
+                <select class="form-control" 
+                        id="order" 
+                        required 
+                        [(ngModel)]="slogdataService.search_tuple.order" 
+                        name="order" 
+                        #name="ngModel">
+                    <option *ngFor="let order of slogdataService.search_options['orders']">{{order.value}}</option>
+                </select>
+            </div>
+        </td>
+        <td> </td>
+        <td>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success" [disabled]="!LogForm.form.valid">Submit</button>
+            </div>
+        </td>
 
     <tr>
-        <form action="/" method="post" accept-charset="ISO-8859-1">
-
-            <td id="form_system_id">SYSTEM_ID<br><select name="SYSTEM_ID" title="Define SYSTEM_ID">
-
-                    <option value="box1.a.de">
-                        box1.a.de
-                    </option>
-
-                    <option value="shell_log">
-                        shell_log
-                    </option>
-
-                    <option selected value="not_selected">
-                        not_selected
-                    </option>
-
-                </select></td>
-            <td id="form_sub_system_id">SUB_SYSTEM_ID<br><select name="SUB_SYSTEM_ID" title="Define SUB_SYSTEM_ID">
-
-                    <option value="s1">
-                        s1
-                    </option>
-                    <option value="Drs-MBP-4.fritz.box">
-                        Drs-MBP-4.fritz.box
-                    </option>
-
-                    <option selected value="not_selected">
-                        not_selected
-                    </option>
-
-                </select></td>
-            <td id="form_sub_sub_system_id">SUB_SUB_SYSTEN_ID<br><select name="SUB_SUB_SYSTEM_ID"
-                    title="DEFINE SUB_SUB_SYSTEM_ID">
-
-
-                    <option value="sub_sub_3">
-                        sub_sub_3
-                    </option>
-
-                    <option selected value="not_selected">
-                        not_selected
-                    </option>
-
-                </select></td>
-            <td id="form_user_spec_1">USER_SPEC_1<br><select name="USER_SPEC_1" title="DEFINE USER_SPEC_1">
-
-                    <option value="us_1_1">us_1_1
-                    </option>
-
-                    <option value="us_1_2">us_1_2
-                    </option>
-
-                    <option selected value="not_selected">not_selected
-                    </option>
-
-                </select></td>
-            <td id="form_user_spec_2">USER_SPEC_2<br><select name="USER_SPEC_2" title="DEFINE USER_SPEC_2">
-
-                    <option value="us_2_2">
-                        us_2_2
-                    </option>
-
-                    <option selected value="not_selected">
-                        not_selected
-                    </option>
-
-                </select></td>
-            <td id="form_produkt_id">PRODUKT_ID<br><select name="PRODUKT_ID" title="DEFINE PRODUKT_ID">
-
-                    <option value="prod_2">
-                        prod_2
-                    </option>
-
-                    <option value="prod_3">
-                        prod_3
-                    </option>
-
-                    <option selected value="not_selected">
-                        not_selected
-                    </option>
-
-                </select></td>
+ 
     </tr>
-
-    <tr>
-        <td id="form_pattern"> Pattern<br> <input name="pattern" size="12" value="not_selected"
-                title="define a pattern to search for"> </td>
-        <td id="form_starting_at"> Starting at<br> <input name="starting_at" size="20" value="not_selected"
-                title="adapt the starting time range for the request"> </td>
-        <td id="form_notify_level"> Notify_level<br> <select name="notify_level"
-                title="define the log level upon which records will be displayed">
-
-
-                <option selected value="00">ALL (>00)</option>
-                <option value="10">DEBUG (>10)</option>
-                <option value="20">INFO (>20) </option>
-                <option value="30">ERROR (>30)</option>
-
-
-            </select> </td>
-        <td id="form_num_records">num_records<br> <input name="max_rows" size="12" value="50"
-                title="define the maximum number of log records to retrieve"> <br> </td>
-        <td id="form_order">order<br> <select name="old_row_first"
-                title="define the order, how log-records are displayed">
-
-                <option value="asc">Oldest log record First</option>
-                <option selected value="desc">Newest Log Record First</option>
-
-            </select></td>
-        <td id="form_input"><br> <input type="submit" value="submit"
-                style=" background-color: #FFFFC0; border: 3pt ridge lightgrey"></td>
-    </tr>
-    </form>
-    -->
 </table>
+
+</form>
+</div>

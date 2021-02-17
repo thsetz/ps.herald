@@ -1,1 +1,9 @@
 <p>cmessages works!</p>
+<div *ngIf="messageService.messages.length">
+
+    <h2>Messages</h2>
+    <button class="clear" (click)="messageService.clear()">clear</button>
+    <table border =1>
+    <div *ngFor='let message of messageService.messages'><tr><td>{{message}}</td></tr></div>
+     </table>
+</div>

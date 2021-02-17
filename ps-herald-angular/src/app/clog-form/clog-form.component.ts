@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Searchvalues } from './search-values'
+//import { Searchvalues } from '../search-values'
+//import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { MessageService } from '../message.service';
+import { SlogDataService } from '../slog-data.service';
 
 @Component({
   selector: 'app-clog-form',
@@ -8,15 +11,15 @@ import { Searchvalues } from './search-values'
 })
 export class ClogFormComponent implements OnInit {
 
-  model = new Searchvalues();
-
-  submitted = false;
-  onSubmit() {this.submitted = true}
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
-
-  constructor() { }
-  ngOnInit(): void {
+  onSubmit() {
+    this.slogdataService.refresh();
   }
+  // TODO: Remove this when we're done
+  get diagnostic() { return JSON.stringify(this.slogdataService.search_tuple); }
+
+  constructor(public slogdataService: SlogDataService,
+              private messageService: MessageService) { 
+  }
+  ngOnInit(): void { }
 
 }
