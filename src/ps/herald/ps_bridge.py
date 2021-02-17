@@ -69,8 +69,11 @@ def handle_client(client_reader, client_writer):
     global SOCKE, SESSION, VERBOSE, BRIDGE_MODE, AGE, ROUND
     current_round = 0
     session = database.get_session()
+    #Config.logger.debug("new client connected", extra={"package_version": __version__})
+    new_connection = True 
     while True:
-        print("Got msg")
+        if VERBOSE:
+             print(f"Got msg new_connection is {new_connection}")
         current_round += 1
         data1 = yield from (client_reader.read(4))
         if not data1:
@@ -121,6 +124,9 @@ def handle_client(client_reader, client_writer):
             session = database.get_session()
             session.add(row)
             session.commit()
+            if  new_connection:
+                new_connection = False
+                Config.logger.debug("new client connected from %s on %s "%(lowered_obj["system_id"],lowered_obj["sub_system_id"]), extra={"package_version": __version__})
 
         except Exception as e:
             Config.logger.exception(

@@ -7,6 +7,8 @@ import { Observable, Subject, throwError, of } from 'rxjs';
 import { catchError, retry, tap, map} from 'rxjs/operators';
 import { Log } from './log';
 import { MessageService } from './message.service';
+//import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,9 @@ export class SlogDataService {
   logs : Log[];
 
   private _refreshNeeded$ = new Subject<void>();
-  url = "http://localhost:5000";
+  //url = "http://localhost:9023";
+  public href: string = "";
+
   get refreshNeeded$() {
     return this._refreshNeeded$;
   }
@@ -42,12 +46,12 @@ export class SlogDataService {
   }
   getData(): Observable<Log[]> {
     let params = this.get_params();
-    return this.http.get<Log[]>(this.url + "/angular/list", { params });
+    return this.http.get<Log[]>(this.href + "/angular/list", { params });
   }
 
   _oget() {
     //this.http.get<any>('http://localhost:5000/angular/options').subscribe({
-    this.http.get<any>(this.url + '/angular/options').subscribe({
+    this.http.get<any>(this.href + '/angular/options').subscribe({
       next: data => {
         this.search_options["system_ids"] = data.system_ids;
         this.search_options["sub_system_ids"] = data.sub_system_ids;
@@ -63,9 +67,12 @@ export class SlogDataService {
     })
   }
 
-  constructor(private http: HttpClient, private messageService: MessageService ) { 
-    this.messageService.add("data service: constructed");
-    this._oget() ;
-
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService,
+    private location: Location) { 
+     // this.href = this.location.path();
+      this.messageService.add("data service: constructed using url"+this.href);
+      this._oget() ;
   }
 }

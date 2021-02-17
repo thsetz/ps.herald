@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 set -x
-
+/bin/rm -fR dist
 ng build
 
 

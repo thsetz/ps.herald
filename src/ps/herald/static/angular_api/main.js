@@ -27,6 +27,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "qCKp");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _message_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./message.service */ "OdHV");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
+
 
 
 
@@ -34,14 +36,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class SlogDataService {
-    constructor(http, messageService) {
+    constructor(http, messageService, location) {
         this.http = http;
         this.messageService = messageService;
+        this.location = location;
         this.search_tuple = new _search_values__WEBPACK_IMPORTED_MODULE_1__["Searchvalues"]();
         this.search_options = new _search_values__WEBPACK_IMPORTED_MODULE_1__["SearchOptions"]();
         this._refreshNeeded$ = new rxjs__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
-        this.url = "http://localhost:5000";
-        this.messageService.add("data service: constructed");
+        this.url = "http://localhost:9023";
+        this.href = "";
+        // this.href = this.location.path();
+        this.messageService.add("data service: constructed using url" + this.href);
         this._oget();
     }
     get refreshNeeded$() {
@@ -68,11 +73,11 @@ class SlogDataService {
     }
     getData() {
         let params = this.get_params();
-        return this.http.get(this.url + "/angular/list", { params });
+        return this.http.get(this.href + "/angular/list", { params });
     }
     _oget() {
         //this.http.get<any>('http://localhost:5000/angular/options').subscribe({
-        this.http.get(this.url + '/angular/options').subscribe({
+        this.http.get(this.href + '/angular/options').subscribe({
             next: data => {
                 this.search_options["system_ids"] = data.system_ids;
                 this.search_options["sub_system_ids"] = data.sub_system_ids;
@@ -88,7 +93,7 @@ class SlogDataService {
         });
     }
 }
-SlogDataService.ɵfac = function SlogDataService_Factory(t) { return new (t || SlogDataService)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_message_service__WEBPACK_IMPORTED_MODULE_4__["MessageService"])); };
+SlogDataService.ɵfac = function SlogDataService_Factory(t) { return new (t || SlogDataService)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_message_service__WEBPACK_IMPORTED_MODULE_4__["MessageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_5__["Location"])); };
 SlogDataService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({ token: SlogDataService, factory: SlogDataService.ɵfac, providedIn: 'root' });
 
 
@@ -653,21 +658,28 @@ __webpack_require__.r(__webpack_exports__);
 class AppComponent {
     constructor() {
         this.title = 'ps-herald-angular';
+        this.version = '1-alpha';
     }
 }
 AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
-AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 6, vars: 1, consts: [["role", "main", 1, "content"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
+AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 9, vars: 2, consts: [["role", "main", 1, "content"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "br");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "span");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "app-clog-form");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "app-clog-list");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "app-cmessages");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "app-clog-form");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "app-clog-list");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "app-cmessages");
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.title, " app is running!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ctx.version, " ");
     } }, directives: [_clog_form_clog_form_component__WEBPACK_IMPORTED_MODULE_1__["ClogFormComponent"], _clog_list_clog_list_component__WEBPACK_IMPORTED_MODULE_2__["ClogListComponent"], _cmessages_cmessages_component__WEBPACK_IMPORTED_MODULE_3__["CmessagesComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LmNzcyJ9 */"] });
 
 

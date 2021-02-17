@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ps-herald-angular';
+  version = '1-alpha';
 }

@@ -1,7 +1,7 @@
 import click
 import shutil
 import sys
-from ps.basic import DEV_STAGES
+from ps.basic import DEV_STAGES,Config
 from ps.herald import create_app
 
 import os
@@ -32,7 +32,11 @@ import os
     default=False,
     help="set debug mode",
 )
-@click.option("--use", "-u", type=str, help="set database file to use")
+@click.option(
+    "--use", 
+    "-u",
+    type=str, 
+    help="set database file to use")
 def main(extra, verbose, debug, use):
     global VERBOSE, DEBUG
     VERBOSE = verbose
@@ -48,7 +52,7 @@ def main(extra, verbose, debug, use):
         shutil.copy(f"{use}", f"{herald_sqlite_filename}")
         print(f"Copied {use} To {herald_sqlite_filename} ")
     app = create_app("ps.herald")
-    app.run()
+    app.run(host="0.0.0.0", port=Config.webserver_port)
 
 
 if __name__ == "__main__":
