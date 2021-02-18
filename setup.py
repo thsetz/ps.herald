@@ -1,5 +1,5 @@
 from setuptools import setup
-install_requires=["Flask", "click", "flask-sqlalchemy", "flask-cors", "ps.basic",],
+install_requires=["Flask", "click", "flask-sqlalchemy", "flask-cors", "ps.basic",]
 version='1.3.0'
 
 setup(
