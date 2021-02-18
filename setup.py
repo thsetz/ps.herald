@@ -20,7 +20,7 @@ setup(
     author='Setz',
     url='https://bitbucket.org/drsetz/ps.herald',
     author_email='Thomas.Setz@acm.org',
-    license='GPL', 
+    license='"License :: OSI Approved :: GNU General Public License (GPL)', 
     packages=["ps.herald"],
     package_dir={"": "src"},
     include_package_data=True,
