@@ -127,6 +127,8 @@ def with_ps_bridge_in_background(stage):
     os.kill(int(proc.pid), 0)
     print(f"process with pid {proc.pid} is still alive. Kill it now.")
     os.kill(proc.pid, signal.SIGKILL)
+    # give bitbucket a littlt more time
+    time.sleep(5)
     return "OK"
 
 
