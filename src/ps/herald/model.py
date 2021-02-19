@@ -1,12 +1,8 @@
 """The models."""
-
-# from datetime import datetime
 from sqlalchemy import BigInteger, Column, Float, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-# from dataclasses import dataclass
 
 Base = declarative_base()
-
 
 # @dataclass
 class Log(Base):
@@ -22,9 +18,7 @@ class Log(Base):
         "sqlite_autoincrement": True
     }  # needed for sqlite. needed for pg ?
     id = Column(Integer, primary_key=True)
-    created = Column(
-        String()
-    )
+    created = Column(String())
     # :e.g. 2015-01-08 10:52:41 currently the time the record
     # is created in the bridge as string sqlite does not support
     # datetime per se here, that is, why the

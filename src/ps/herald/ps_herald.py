@@ -1,7 +1,7 @@
 import click
 import shutil
 import sys
-from ps.basic import DEV_STAGES,Config
+from ps.basic import DEV_STAGES, Config
 from ps.herald import create_app
 
 import os
@@ -32,11 +32,7 @@ import os
     default=False,
     help="set debug mode",
 )
-@click.option(
-    "--use", 
-    "-u",
-    type=str, 
-    help="set database file to use")
+@click.option("--use", "-u", type=str, help="set database file to use")
 def main(extra, verbose, debug, use):
     global VERBOSE, DEBUG
     VERBOSE = verbose

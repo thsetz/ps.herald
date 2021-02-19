@@ -47,7 +47,7 @@ def client_connected_handler(client_reader, client_writer):
 
     def client_done(task):
         """When the tasks that handles the specific client
-           connection is done.
+        connection is done.
         """
         del CLIENTS[task]
 
@@ -69,11 +69,11 @@ def handle_client(client_reader, client_writer):
     global SOCKE, SESSION, VERBOSE, BRIDGE_MODE, AGE, ROUND
     current_round = 0
     session = database.get_session()
-    #Config.logger.debug("new client connected", extra={"package_version": __version__})
-    new_connection = True 
+    # Config.logger.debug("new client connected", extra={"package_version": __version__})
+    new_connection = True
     while True:
         if VERBOSE:
-             print(f"Got msg new_connection is {new_connection}")
+            print(f"Got msg new_connection is {new_connection}")
         current_round += 1
         data1 = yield from (client_reader.read(4))
         if not data1:
@@ -96,9 +96,7 @@ def handle_client(client_reader, client_writer):
             for name, value in obj.items():
                 if name == "msg":
                     name = "message"
-                    value = value.replace(u"\u2018", " ").replace(
-                        u"\u2019", " "
-                    )
+                    value = value.replace("\u2018", " ").replace("\u2019", " ")
                     value = str(value).replace("'", " ").replace('"', " ")
                 if name == "args":
                     value = ""
@@ -124,9 +122,13 @@ def handle_client(client_reader, client_writer):
             session = database.get_session()
             session.add(row)
             session.commit()
-            if  new_connection:
+            if new_connection:
                 new_connection = False
-                Config.logger.debug("new client connected from %s on %s "%(lowered_obj["system_id"],lowered_obj["sub_system_id"]), extra={"package_version": __version__})
+                Config.logger.debug(
+                    "new client connected from %s on %s "
+                    % (lowered_obj["system_id"], lowered_obj["sub_system_id"]),
+                    extra={"package_version": __version__},
+                )
 
         except Exception as e:
             Config.logger.exception(
@@ -156,7 +158,7 @@ def handle_client(client_reader, client_writer):
 
 def print_to_tunnel(data_p):
     """Running in bridge-mode we route the incoming message to
-       the outgoing socket."""
+    the outgoing socket."""
     global SOCKE
     try:
         SOCKE.sendall(data_p)
