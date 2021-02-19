@@ -1,5 +1,5 @@
-Welcome to ps_herald's documentation!
-=====================================
+Welcome to ps_herald's |version| documentation
+==============================================
 
 .. toctree::
    :maxdepth: 2
@@ -8,11 +8,8 @@ Welcome to ps_herald's documentation!
 
 
    ps
-..   ps_herald
-..   ps_herald.auth
-..   ps_herald.errors
-..   ps_herald.main
-
+   herald
+..   herald.graph_ql
 
 
 

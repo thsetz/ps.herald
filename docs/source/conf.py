@@ -12,9 +12,11 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('../../src'))
+sys.path.append(os.path.abspath('../../src/ps'))
+sys.path.append(os.path.abspath('.'))
 
-from ps.herald import __version__ as VERSION
+from ps.herald import __version__ 
 try:
   from ConfigParser import SafeConfigParser, ParsingError
 except:
@@ -24,13 +26,12 @@ except:
 # -- Project information -----------------------------------------------------
 
 project = 'ps.herald'
-copyright = '2019, Thomas Setz'
+copyright = '2021, Thomas Setz'
 author = 'Thomas Setz'
 master_doc = 'index'
 
-# The full version, including alpha/beta/rc tags
-release = '1.0.0'
-
+release = __version__
+version = __version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -68,6 +69,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = "sphinx_rtd_theme"
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

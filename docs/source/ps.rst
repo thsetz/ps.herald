@@ -1,5 +1,8 @@
-ps.herald package
-=================
+ps herald  :Version: |release|
+==============================
+
+
+
 
 The ps.herald  package provides three tools usable to monitor the behaviour of distributed applications
 
@@ -53,21 +56,15 @@ Those messages/events can be analyzed and further events could be triggered by n
 
 
 
-Submodules
-----------
-
-
-        
-ps.herald module
-----------------
-ps.herald is  a flask-based (http://flask.pocoo.org/)  web micro-framework, enabling us to display 
-logging messages of the participating systems/services. The flask implementation part is based
-on the documentation given on https://blog.miguelgrinberg.com/index.
+ps_herald
+---------
+ps_herald is  a flask-based (http://flask.pocoo.org/)  web micro-framework, enabling us to display 
+logging messages of the participating systems/services. 
 
 It uses sqlachemy to access the sqlite database.
 
 
-ps.herald listens for html-requests (normally issued by an user-interface  e.g. firefox/safari/chrome ...)
+ps_herald listens for html-requests (normally issued by an user-interface  e.g. firefox/safari/chrome ...)
 and returns corresponding log-messages.
 
 The following picture shows a screenshot for the usage of  herald within google-chrome ...
@@ -90,21 +87,8 @@ From left to right you see:
 
 
 
-
-
-
-Heralds Autodocumentation .....
-
-
-.. automodule:: ps.herald.ps_herald
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-Fin of Doc
-
-ps_bridge module
-----------------
+ps_bridge
+---------
 
 The ps_bridge executable:
 
@@ -114,19 +98,11 @@ The ps_bridge executable:
     - puts them into a local sqlite database
     - eventually (bridge-mode) forwards the message to another socket endpoint. 
 
-.. automodule:: ps.herald.ps_bridge
-    :members:
-    :undoc-members:
-    :show-inheritance:
 
 
 
-
-
-
-
-ps_neelix module
-----------------
+ps_neelix
+---------
 
 The ps_neelix executable  reads it's config file where services and 
 'reactions' are defined.
@@ -137,43 +113,14 @@ heartbeat of a service has been lost.
 
 
 
-.. automodule:: ps.herald.ps_neelix
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-ps.Basic module
----------------
-
-.. automodule:: ps.basic.Config
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-
-Module contents
----------------
-
-.. .. automodule:: ps 
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-Installation
-============
-
 
 Install the package within a private virtualenv
 -----------------------------------------------
 
 
-
 To install the herald-package and it's services, we first create a new directory e.g. 
 $HOME/nodename/ps.herald_$BUILD_DATE, copy the following template to that directory and
 than execute the skript.
-
 
 
 .. code-block:: bash
@@ -205,11 +152,8 @@ Maybe  we establish a link in $HOME/nodename so that, in called scripts, we coul
 
 
 
-
-
-
-Integrating restart and invocation of neelix/herald with a local crontab
-------------------------------------------------------------------------
+Integrating restart and invocation of neelix/herald/bridge with a local crontab
+-------------------------------------------------------------------------------
 
 Beneath an example how herald,ssh-tunnel, bridge and neelix currently 
 are (re)started on sulu
