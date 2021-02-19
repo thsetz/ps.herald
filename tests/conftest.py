@@ -18,10 +18,10 @@ with open(os.path.join(os.path.dirname(__file__), "test_data.sql"), "rb") as f:
     _data_sql = f.read().decode("utf8").split("\n")
 
 
-@pytest.fixture(scope="module", params=["TESTING"])
+#@pytest.fixture(scope="module", params=["TESTING"])
 # @pytest.fixture(params=["TESTING"])
 # @pytest.fixture(scope="module", params=DEV_STAGES.keys())
-# @pytest.fixture(params=DEV_STAGES.keys())
+@pytest.fixture(params=DEV_STAGES.keys())
 def dev_allowed_stages(request):
     os.environ["TESTING"] = "YES"
     os.environ["DEV_STAGE"] = request.param

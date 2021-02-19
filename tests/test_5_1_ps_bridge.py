@@ -5,12 +5,6 @@ from ps.basic import Config
 import time
 
 
-def test_ps_bridge1(with_ps_bridge_in_background, db_app, client):
-
-    print(f"PROC PID IS {with_ps_bridge_in_background.pid}")
-    assert os.path.isfile("herald.sqlite_t")
-
-
 def test_ps_bridge_receives_logging_messages(
     with_ps_bridge_in_background, db_app, client
 ):

@@ -1,6 +1,5 @@
 # get the version number defined in setup.py
 import pkg_resources
-
 __version__ = pkg_resources.get_distribution("ps.herald").version
 
 import os
@@ -25,8 +24,6 @@ def create_app(name, have_config_file=False, test_config=None):
         static_folder=os.path.join(here, "static"),
     )
 
-    p = os.path.join(here, "static")
-    print(f"STATIC FOLDER IS {p}")
     app.config.from_mapping(
         SECRET_KEY="dev",
         DATABASE=os.path.join(app.instance_path, "flaskr.sqlite"),
@@ -40,10 +37,9 @@ def create_app(name, have_config_file=False, test_config=None):
         if app.config["TESTING"]:
             Config.reset_singleton()
 
-    #   needed to integrate java_script/angular apps
     CORS(app)
 
-    # initialize ps.basic and the datase file used by flask
+    # initialize ps.basic and the database file used by flask
     Config.Basic(name, have_config_file=have_config_file)
     app.config["DATABASE"] = Config.herald_sqlite_filename
     app.config["EXPLAIN_TEMPLATE_LOADING"] = True
@@ -61,10 +57,7 @@ def create_app(name, have_config_file=False, test_config=None):
     from . import angular_api
     app.register_blueprint(angular_api.bp, url_prefix="/angular")
 
-    # Add graphQl support - maybe this will be introduced within an 
-    # own server
-
-    # graphQL
+    # Add graphQl support 
     #https://docs.graphene-python.org/projects/sqlalchemy/en/latest/tips/#querying
     from ps.herald.model import Base
     from ps.herald.database import get_session
@@ -75,5 +68,4 @@ def create_app(name, have_config_file=False, test_config=None):
         "/graph_ql",
         view_func=View.as_view("graphql", graphiql=True, schema=schema))
 
-    print(app.url_map)
     return app
