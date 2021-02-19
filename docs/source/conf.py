@@ -30,8 +30,8 @@ copyright = '2021, Thomas Setz'
 author = 'Thomas Setz'
 master_doc = 'index'
 
-release = '1.4.1'
-version = '1.4.1'
+release = '1.4.2'
+version = '1.4.2'
 
 
 # -- General configuration ---------------------------------------------------
