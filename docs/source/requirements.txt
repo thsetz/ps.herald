@@ -1,4 +1,4 @@
-alabaster==0.7.12
+alabastea==0.7.12
 aniso8601==7.0.0
 attrs==20.3.0
 Babel==2.9.0
@@ -25,8 +25,7 @@ MarkupSafe==1.1.1
 packaging==20.9
 pluggy==0.13.1
 promise==2.3
-ps-herald==1.0
-ps.basic==1.2.17
+ps.basic>=1.2.17
 py==1.10.0
 Pygments==2.8.0
 pygraphviz==1.7
