@@ -96,7 +96,7 @@ def db_app(app):
     with app.app_context():
         # The fixture is called sometimes with ps_bridge in the background,
         # that needs a ittle time ...
-        time.sleep(4)
+        time.sleep(15)
     return app
 
 
