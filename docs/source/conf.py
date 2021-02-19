@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.abspath('../../src'))
 sys.path.append(os.path.abspath('../../src/ps'))
 sys.path.append(os.path.abspath('.'))
 
-from ps.herald import __version__ 
+#from ps.herald import __version__ 
 try:
   from ConfigParser import SafeConfigParser, ParsingError
 except:
@@ -30,8 +30,8 @@ copyright = '2021, Thomas Setz'
 author = 'Thomas Setz'
 master_doc = 'index'
 
-release = __version__
-version = __version__
+release = '1.4.1'
+version = '1.4.1'
 
 
 # -- General configuration ---------------------------------------------------
