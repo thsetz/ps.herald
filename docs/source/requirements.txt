@@ -1,4 +1,3 @@
-alabastea==0.7.12
 aniso8601==7.0.0
 attrs==20.3.0
 Babel==2.9.0
