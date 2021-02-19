@@ -2,7 +2,7 @@ from setuptools import setup
 install_requires=["Flask", "click", "flask-sqlalchemy", 
                   "graphene","graphene_sqlalchemy", "flask-graphql", "flask-cors", 
                   "ps.basic",]
-version='1.4.0'
+version='1.4.1'
 
 setup(
     name="ps.herald",
