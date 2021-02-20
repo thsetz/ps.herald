@@ -6,12 +6,12 @@ ps herald  :Version: |release|
 
 The ps.herald  package provides three tools usable to monitor the behaviour of distributed applications
 
-Herald's functionality is based on the **Basic** class, defined in the ps.basic package. For ease of use, we provide the
-current documentation of that package at the end of this section. Within that documentation you'll  be enabled to use the 
-ps.Basic.Basic   mechanism (especially the logging mechanism) within your application.
+Herald's functionality is based on the Config module, defined in the 
+Within that documentation you'll  be enabled to use the ps.basic.Config mechanisms (especially 
+the logging mechanism) within your application.
 
-The **Basic** class (among other things) enhances/uses the standard python logging package - especially  the ability to log messages
-to a stream-socket.
+The **Config** module(among other things) enhances/uses the standard python logging package - 
+especially  the ability to log messages to a stream-socket.
 
 This package/the herald package adds mechanisms to:
 
@@ -32,7 +32,7 @@ The tasks of the tools implemented within that package will be explained with th
 
 
 If a program is running - let that program be named job or service (within the picture those programs are 
-named job_[a,b,x,1,2] in column 4 (Production environment Runtime) ) it emits logging-messages (via the ps.Basic.Basic class).
+named job_[a,b,x,1,2] in column 4 (Production environment Runtime) ) it emits logging-messages (via the ps.basic.Config module).
 
 Those logging messages are :
 
