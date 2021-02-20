@@ -53,10 +53,11 @@ def test_ps_bridge_herald_logging_messages(
         - check that the message is in the database
     """
     with db_app.app_context():
-        session = database.get_session()
         response = client.get("/hello_to_ps_basic_logger")
         assert response.data == b"Hello, World!"
 
+        time.sleep(5)
+        session = database.get_session()
         num_rows = session.query(Log).count()
         assert num_rows >= 1
 
